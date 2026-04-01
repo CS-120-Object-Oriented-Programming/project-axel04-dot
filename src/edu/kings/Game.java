@@ -20,7 +20,13 @@ public class Game {
 	private World world;
 	/** The room the player character is currently in. */
 	private Room currentRoom;
-
+	
+	private Room previousRoom;
+	
+	private int score;
+	
+	private int turns;
+	
 	/**
 	 * Create the game and initialize its internal map.
 	 */
@@ -28,6 +34,12 @@ public class Game {
 		world = new World();
 		// set the starting room
 		currentRoom = world.getRoom("outside");
+		
+		previousRoom = null;
+		
+		score=0;
+		turns=0;
+		
 	}
 
 	/**
@@ -51,32 +63,38 @@ public class Game {
 	// Helper methods for processing the commands
 
 	/**
+	 * 
 	 * Given a command, process (that is: execute) the command.
 	 *
 	 * @param command
 	 *            The command to be processed.
 	 * @return true If the command ends the game, false otherwise.
 	 */
-	private boolean processCommand(Command command) {
-		boolean wantToQuit = false;
+	
+    private void printLocationInformation() {
+        System.out.println("You are in : " + currentRoom.getDescription());
+        
+        System.out.println("exit: ");
+    }
 
-		if (command.isUnknown()) {
-			Writer.println("I don't know what you mean...");
-		} else {
+   
+    private void look() {
+        printLocationInformation(); 
+        }
 
-			String commandWord = command.getCommandWord();
-			if (commandWord.equals("help")) {
-				printHelp();
-			} else if (commandWord.equals("go")) {
-				goRoom(command);
-			} else if (commandWord.equals("quit")) {
-				wantToQuit = quit(command);
-			} else {
-				Writer.println(commandWord + " is not implemented yet!");
-			}
-		}
-		return wantToQuit;
-	}
+
+    private boolean processCommand(Command command) {
+        boolean wantToQuit = false;
+
+        if (command.isUnknown()) {
+            Writer.println("I don't know what you mean...");
+            return wantToQuit;
+        }
+
+ 
+        CommandEnum commandWord = command.getCommandEnum();
+        return wantToQuit;
+    }
 
 	///////////////////////////////////////////////////////////////////////////
 	// Helper methods for implementing all of the commands.
@@ -114,11 +132,18 @@ public class Game {
 			if (doorway == null) {
 				Writer.println("There is no door!");
 			} else {
-				Room newRoom = doorway.getDestination();
+					Room newRoom = doorway.getDestination();
+				
+				
+				previousRoom = currentRoom; 
+				currentRoom = newRoom;     
+				turns++;
+				
 				currentRoom = newRoom;
 				Writer.println(newRoom.getName() + ":");
 				Writer.println("You are " + newRoom.getDescription());
 				Writer.print("Exits: ");
+				
 				if (newRoom.northExit != null) {
 					Writer.print("north ");
 				}
@@ -136,6 +161,30 @@ public class Game {
 		}
 	}
 
+
+	private void status() {
+	    Writer.println("--- Status ---");
+	    Writer.println("Score: " + score);
+	    Writer.println("Turns: " + turns);
+	   
+	    printLocationInformation(); 
+	}
+
+	
+	private void back() {
+	    if (previousRoom == null) {
+	        Writer.println("You have nowhere to go back to!");
+	    } else {
+	      
+	        Room temp = currentRoom;
+	        currentRoom = previousRoom;
+	        previousRoom = temp;
+	        
+	        turns++;
+	        Writer.println("You went back.");
+	        printLocationInformation();
+	    }
+	}
 	/**
 	 * Print out the closing message for the player.
 	 */
@@ -153,7 +202,7 @@ public class Game {
 		Writer.println("around at the university.");
 		Writer.println();
 		Writer.println("Your command words are:");
-		Writer.println("   go quit help");
+		Writer.println(" look  go quit help");
 	}
 
 	/**
@@ -168,6 +217,8 @@ public class Game {
 		Writer.println(currentRoom.getName() + ":");
 		Writer.println("You are " + currentRoom.getDescription());
 		Writer.print("Exits: ");
+		
+	
 		if (currentRoom.northExit != null) {
 			Writer.print("north ");
 		}
@@ -181,6 +232,7 @@ public class Game {
 			Writer.print("west ");
 		}
 		Writer.println("");
+		
 	}
 
 	/**
@@ -198,5 +250,8 @@ public class Game {
 			wantToQuit = false;
 		}
 		return wantToQuit;
+		
+
+	
 	}
 }

@@ -12,18 +12,33 @@ package edu.kings;
  * Used with permission from Dr. Maria Jump at Northeastern University
  */
 
-public class CommandWords {
+public class CommandWords { 
 	/** A constant array that holds all valid command words. */
-	private static String[] validCommands;
+	private static CommandEnum[] validCommands;
 
 	/**
 	 * Static block to initialize the fields of CommandWords.
 	 */
-	static {
-		String[] tempCommands = {"go", "quit", "help" };
-		validCommands = tempCommands;
+	static {  validCommands = CommandEnum.values();
 	}
-
+	/**
+	 * Converts a String into a CommandEnum object.
+	 *
+	 * @param theString The String containing the command word.
+	 * @return The CommandEnum object representing the command, or null if
+	the command does
+	 * not exist.
+	*/
+	public static CommandEnum getCommand(String theString) {
+        CommandEnum foundCommand = null;
+        for (CommandEnum command : validCommands) {
+        
+            if (command.toString().equals(theString)) {
+                foundCommand = command;
+            }
+        }
+        return foundCommand;
+    }
 	/**
 	 * Check whether a given String is a valid command word.
 	 *
@@ -31,15 +46,7 @@ public class CommandWords {
 	 * @return true if a given string is a valid command, false if it isn't.
 	 */
 	public static boolean isCommand(String aString) {
-		boolean valid = false;
-		int index = 0;
-		while (!valid && index < validCommands.length) {
-			if (validCommands[index].equals(aString)) {
-				valid = true;
-			}
-			index++;
-		}
-		// if we get here, the string was not found in the commands
-		return valid;
+		return getCommand(aString) != null;
+		
 	}
 }

@@ -61,16 +61,15 @@ public class Reader {
 
         // Now check whether this word is known. If so, create a command
         // with it. If not, create a "null" command (for unknown command).
-        Command result = null;
-        if (CommandWords.isCommand(word1)) {
-            result = new Command(word1, restOfLine);
-        }
-        else {
-            result = new Command(null, restOfLine);
-        }
+  
+        CommandEnum command = CommandWords.getCommand(word1);
+
+        
+        Command result = new Command(command, restOfLine);
+
+  
         return result;
     }
-
     /**
      * Return the response to a question in all lower case.
      *
