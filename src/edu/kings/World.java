@@ -31,7 +31,7 @@ public class World {
 	 * the "Campus of Kings" application.
 	 *
 	 * @param name
-	 *            The provided name of the room.
+	 * The provided name of the room.
 	 * @return The room associated with the provided name
 	 */
 	public Room getRoom(String name) {
@@ -46,7 +46,7 @@ public class World {
 	 * installed in to the collection of Rooms
 	 *
 	 * @param theRoom
-	 *            The room to add to the world.
+	 * The room to add to the world.
 	 */
 	private void addRoom(Room theRoom) {
 		rooms.put(theRoom.getName().toLowerCase(), theRoom);
@@ -56,52 +56,15 @@ public class World {
 	 * Helper method for creating doors between rooms.
 	 *
 	 * @param from
-	 *            The room where the door originates.
-	 * @param north
-	 *            The room to the north of the originating room.
+	 * The room where the door originates.
+	 * @param direction
+	 * The direction of the door in the from room.
+	 * @param to
+	 * The room where the door goes.
 	 */
-	private void createNorthDoor(Room from, Room north) {
-		Door northDoor = new Door(north);
-		from.northExit = northDoor;
-	}
-
-	/**
-	 * Helper method for creating doors between rooms.
-	 *
-	 * @param from
-	 *            The room where the door originates.
-	 * @param east
-	 *            The room to the east of the originating room.
-	 */
-	private void createEastDoor(Room from, Room east) {
-		Door eastDoor = new Door(east);
-		from.eastExit = eastDoor;
-	}
-
-	/**
-	 * Helper method for creating doors between rooms.
-	 *
-	 * @param from
-	 *            The room where the door originates.
-	 * @param south
-	 *            The room to the south of the originating room.
-	 */
-	private void createSouthDoor(Room from, Room south) {
-		Door southDoor = new Door(south);
-		from.southExit = southDoor;
-	}
-
-	/**
-	 * Helper method for creating doors between rooms.
-	 *
-	 * @param from
-	 *            The room where the door originates.
-	 * @param west
-	 *            The room to the west of the originating room.
-	 */
-	private void createWestDoor(Room from, Room west) {
-		Door westDoor = new Door(west);
-		from.westExit = westDoor;
+	private void createDoor(Room from, String direction, Room to) {
+		Door theDoor = new Door(to);
+		from.setExit(direction, theDoor);
 	}
 
 	/**
@@ -131,29 +94,29 @@ public class World {
 		this.addRoom(lab);
 		this.addRoom(classroom);
 
-		// Creating all the doors between the rooms.
-		this.createSouthDoor(essef, outside);
-		this.createNorthDoor(outside, essef);
+		// Creating all the doors between the rooms using the generic createDoor method.
+		this.createDoor(essef, "south", outside);
+		this.createDoor(outside, "north", essef);
 
-		this.createEastDoor(campusCenter, outside);
-		this.createWestDoor(outside, campusCenter);
+		this.createDoor(campusCenter, "east", outside);
+		this.createDoor(outside, "west", campusCenter);
 
-		this.createEastDoor(outside, holyCross);
-		this.createWestDoor(holyCross, outside);
+		this.createDoor(outside, "east", holyCross);
+		this.createDoor(holyCross, "west", outside);
 
-		this.createSouthDoor(outside, admin);
-		this.createNorthDoor(admin, outside);
+		this.createDoor(outside, "south", admin);
+		this.createDoor(admin, "north", outside);
 
-		this.createEastDoor(admin, lab);
-		this.createWestDoor(lab, admin);
+		this.createDoor(admin, "east", lab);
+		this.createDoor(lab, "west", admin);
 
-		this.createSouthDoor(admin, janoskiOffice);
-		this.createNorthDoor(janoskiOffice, admin);
+		this.createDoor(admin, "south", janoskiOffice);
+		this.createDoor(janoskiOffice, "north", admin);
 
-		this.createWestDoor(admin, slivaOffice);
-		this.createEastDoor(slivaOffice, admin);
+		this.createDoor(admin, "west", slivaOffice);
+		this.createDoor(slivaOffice, "east", admin);
 
-		this.createSouthDoor(lab, classroom);
-		this.createNorthDoor(classroom, lab);
+		this.createDoor(lab, "south", classroom);
+		this.createDoor(classroom, "north", lab);
 	}
 }

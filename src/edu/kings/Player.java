@@ -1,8 +1,6 @@
 package edu.kings;
 
 /**
- * Representa al personaje controlado por el jugador en el juego.
- * Mantiene el rastro de la ubicación actual del jugador.
  * * @author Axel E
  * @version 1.0
  */ 
