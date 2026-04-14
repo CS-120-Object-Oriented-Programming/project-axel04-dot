@@ -25,6 +25,9 @@ public class Room {
     
     /** The exits of this room. */
     private HashMap<String, Door> exits;
+    
+    /** The items in this room. */
+    private HashMap<String, Items> items; // Requisito Lab 08 
 
     /**
      * Static initializer.
@@ -38,14 +41,40 @@ public class Room {
      * "description" is something like "a kitchen" or "an open court yard".
      *
      * @param name  The room's name.
-     * @param description
-     * The room's description.
+     * @param description The room's description.
      */
     public Room(String name, String description) {
         this.name = name;
         this.description = description;
         this.exits = new HashMap<String, Door>();
+        this.items = new HashMap<String, Items>(); // Inicialización crucial 
         counter++;
+    }
+
+    /**
+     * Add an item to this room. 
+     * @param item The item to be added.
+     */
+    public void addItem(Items item) {
+        items.put(item.getName().toLowerCase(), item); 
+    }
+
+    /**
+     * Get an item from this room by its name. 
+     * @param name The name of the item.
+     * @return The item or null if not found.
+     */
+    public Items getItem(String name) {
+        return items.get(name.toLowerCase()); 
+    }
+
+    /**
+     * Remove an item from the room by its name. 
+     * @param name The name of the item to remove.
+     * @return The actual item removed, or null if it doesn't exist. 
+     */
+    public Items removeItem(String name) {
+        return items.remove(name.toLowerCase()); 
     }
 
     /**
@@ -66,18 +95,34 @@ public class Room {
         return exits.get(direction);
     }
 
+    /**
+     * Returns a description of the room, including exits and items. [cite: 39]
+     * @return A string description of the room.
+     */
+    @Override
     public String toString() {
         String returnString = name + ":\n"; 
         returnString += "You are " + description + "\n";
-        returnString += "Exits: "; 
         
        
+        returnString += "Exits: "; 
         for (String exitName : exits.keySet()) {
             returnString += exitName + " "; 
+        }
+        returnString += "\n";
+        
+    
+        if (!items.isEmpty()) {
+            returnString += "Items: "; 
+            for (String itemName : items.keySet()) {
+                returnString += itemName + " "; 
+            }
+            returnString += "\n";
         }
         
         return returnString; 
     }
+
     /**
      * Returns the number of rooms that have been created in the world.
      * @return The number of rooms that have been created in the world.

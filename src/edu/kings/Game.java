@@ -2,25 +2,13 @@ package edu.kings;
 
 /**
  * This class is the main class of the "Campus of Kings" application.
- * "Campus of Kings" is a very simple, text based adventure game. Users can walk
- * around some scenery. That's all. It should really be extended to make it more
- * interesting!
- *
- * This game class creates and initializes all the others: it creates all rooms,
- * creates the parser and starts the game. It also evaluates and executes the
- * commands that the parser returns.
- *
- * @author Maria Jump
- * @version 2015.02.01
- *
- * Used with permission from Dr. Maria Jump at Northeastern University
+ * ... (
  */
-
 public class Game {
 	/** The world where the game takes place. */
 	private World world;
-	/** The room the player character is currently in. */
-	private Room currentRoom;
+	/** The player character in the game. */
+	private Player player; 
 	/** The room the player character was previously in. */
 	private Room previousRoom;
 	
@@ -32,8 +20,8 @@ public class Game {
 	 */
 	public Game() {
 		world = new World();
-		// set the starting room
-		currentRoom = world.getRoom("outside");
+		
+		player = new Player(world.getRoom("outside"));
 		previousRoom = null;
 		score = 0;
 		turns = 0;
@@ -45,8 +33,6 @@ public class Game {
 	public void play() {
 		printWelcome();
 
-		// Enter the main game loop. Here we repeatedly read commands and
-		// execute them until the game is over.
 		boolean wantToQuit = false;
 		while (!wantToQuit) {
 			Command command = Reader.getCommand();
@@ -55,22 +41,10 @@ public class Game {
 		printGoodbye();
 	}
 
-	///////////////////////////////////////////////////////////////////////////
-	// Helper methods for processing the commands
-
-	/**
-	 * Prints out the current location and exits.
-	 */
-	private void printLocationInformation() {
-	
-		Writer.println(currentRoom.toString());
-	}
-
 	/**
 	 * Given a command, process (that is: execute) the command.
 	 *
-	 * @param command
-	 * The command to be processed.
+	 * @param command The command to be processed.
 	 * @return true If the command ends the game, false otherwise.
 	 */
 	private boolean processCommand(Command command) {
@@ -83,77 +57,141 @@ public class Game {
 
 		CommandEnum commandWord = command.getCommandEnum();
 		switch (commandWord) {
-        case HELP:
-            printHelp();
-            break;
-        case GO:
-            goRoom(command);
-            break;
-        case LOOK:
-            look();
-            break;
-        case STATUS:
-            status();
-            break;
-        case BACK:
-            back();
-            break;
-        case QUIT:
-            wantToQuit = quit(command);
-            break;
+            case HELP:
+                printHelp();
+                break;
+            case GO:
+                goRoom(command);
+                break;
+            case LOOK:
+                look();
+                break;
+            case STATUS:
+                status();
+                break;
+            case BACK:
+                back();
+                break;
+            case TAKE: // Lab 08
+                takeItem(command);
+                break;
+            case DROP: // Lab 08
+                dropItem(command);
+                break;
+            case EXAMINE: // Lab 08
+                examineItem(command);
+                break;
+            case INVENTORY: // Lab 08
+                showInventory();
+                break;
+            case QUIT:
+                wantToQuit = quit(command);
+                break;
+        }
+        return wantToQuit;
     }
-    return wantToQuit;
-}
-		
-		
-		return wantToQuit;
-	}
 
 	///////////////////////////////////////////////////////////////////////////
-	// Helper methods for implementing all of the commands.
-
+	
 	/**
-	 * Try to go to one direction. If there is an exit, enter the new room,
-	 * otherwise print an error message.
-	 *
-	 * @param command
-	 * The command to be processed.
+	 * Implementation of the take command.
 	 */
-	private void goRoom(Command command) {
+	private void takeItem(Command command) {
 		if (!command.hasSecondWord()) {
-			
-			Writer.println("Go where?");
+			Writer.println("Take what?");
+			return;
+		}
+		String itemName = command.getSecondWord();
+		Room currentRoom = player.getCurrentLocation();
+		Items item = currentRoom.getItem(itemName);
+
+		if (item == null) {
+			Writer.println("That item is not here.");
 		} else {
-			String direction = command.getRestOfLine();
-
-			
-			Door doorway = currentRoom.getExit(direction);
-
-			if (doorway == null) {
-				Writer.println("There is no door!");
+			if (player.addItem(item)) {
+				currentRoom.removeItem(itemName);
+				Writer.println("You took the " + itemName + ".");
 			} else {
-				
-				previousRoom = currentRoom;
-			
-				currentRoom = doorway.getDestination();
-				turns++;
-				
-				
-				printLocationInformation();
+				Writer.println("The " + itemName + " is too heavy to carry.");
 			}
 		}
 	}
 
 	/**
-	 * Show the current room's description and exits.
+	 * Implementation of the drop command.
 	 */
+	private void dropItem(Command command) {
+		if (!command.hasSecondWord()) {
+			Writer.println("Drop what?");
+			return;
+		}
+		String itemName = command.getSecondWord();
+		Items item = player.removeItem(itemName);
+
+		if (item == null) {
+			Writer.println("You are not carrying that.");
+		} else {
+			player.getCurrentLocation().addItem(item);
+			Writer.println("You dropped the " + itemName + ".");
+		}
+	}
+
+	/**
+	 * Implementation of the examine command.
+	 */
+	private void examineItem(Command command) {
+		if (!command.hasSecondWord()) {
+			Writer.println("Examine what?");
+			return;
+		}
+		String itemName = command.getSecondWord();
+		Items item = player.getCurrentLocation().getItem(itemName);
+		if (item == null) {
+			item = player.getItem(itemName);
+		}
+
+		if (item == null) {
+			Writer.println("You don't see that here.");
+		} else {
+			Writer.println(item.toString());
+		}
+	}
+
+	/**
+	 * Implementation of the inventory command.
+	 */
+	private void showInventory() {
+		Writer.println(player.getInventoryString());
+	}
+
+	///////////////////////////////////////////////////////////////////////////
+
+	private void printLocationInformation() {
+		Writer.println(player.getCurrentLocation().toString());
+	}
+
+	private void goRoom(Command command) {
+		if (!command.hasSecondWord()) {
+			Writer.println("Go where?");
+		} else {
+			String direction = command.getRestOfLine();
+			Door doorway = player.getCurrentLocation().getExit(direction);
+
+			if (doorway == null) {
+				Writer.println("There is no door!");
+			} else {
+				previousRoom = player.getCurrentLocation();
+				player.setCurrentLocation(doorway.getDestination());
+				turns++;
+				printLocationInformation();
+			}
+		}
+	}
+
 	private void look() {
 		printLocationInformation();
 	}
 
-	/**
-	 * Show the player's current status (score and turns).
-	 */
 	private void status() {
 		Writer.println("--- Status ---");
 		Writer.println("Score: " + score);
@@ -161,6 +199,9 @@ public class Game {
 		Writer.println();
 		printLocationInformation();
 	}
+
+	
+}
 
 	/**
 	 * Take the player to the previous room.
