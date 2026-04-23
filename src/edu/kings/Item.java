@@ -1,6 +1,6 @@
 package edu.kings;
 
-public class Items {
+public class Item {
 	
 	private String name;
 	private String description;

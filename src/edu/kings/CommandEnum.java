@@ -7,30 +7,25 @@ public enum CommandEnum {
 	back (),
 	help (),
 	quit (),
-	
-	
-/*	switch String {
-         case LOOK:
-             look();
-             break;
-         case STATUS:
-             status();
-             break;
-         case BACK:
-             back();
-             break;
-         case HELP:
-             printHelp();
-             break;
-         case GO:
-             goRoom(command);
-             break;
-         case QUIT:
-             wantToQuit = quit(command);
-             break;
-         default:
-             Writer.println("Command not implemented yet!");
-             break; 
-	}
- */
+	take (),
+	drop(),
+	examine(),
+	inventory(),
+	unlock("unlock"), 
+    lock("lock"), 
+    pack("pack"), 
+    unpack("unpack");
+
+    private String commandString;
+
+    CommandEnum(String commandString) {
+        this.commandString = commandString;
+    }
+
+    @Override
+    public String toString() {
+        return commandString;
+    }
 }
+	
+	

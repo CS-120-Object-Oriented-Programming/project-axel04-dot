@@ -15,6 +15,7 @@ public class Game {
 	private int score;
 	private int turns;
 	
+	
 	/**
 	 * Create the game and initialize its internal map.
 	 */
@@ -53,46 +54,114 @@ public class Game {
 		if (command.isUnknown()) {
 			Writer.println("I don't know what you mean...");
 			return wantToQuit;
+		
 		}
 
 		CommandEnum commandWord = command.getCommandEnum();
 		switch (commandWord) {
-            case HELP:
+            case help:
                 printHelp();
                 break;
-            case GO:
+            case go:
                 goRoom(command);
                 break;
-            case LOOK:
+            case look:
                 look();
                 break;
-            case STATUS:
+            case status:
                 status();
                 break;
-            case BACK:
+            case back:
                 back();
                 break;
-            case TAKE: // Lab 08
+            case take: 
                 takeItem(command);
                 break;
-            case DROP: // Lab 08
+            case drop: 
                 dropItem(command);
                 break;
-            case EXAMINE: // Lab 08
+            case examine: 
                 examineItem(command);
                 break;
-            case INVENTORY: // Lab 08
+            case inventory: 
                 showInventory();
                 break;
-            case QUIT:
+            case unpack:
+                unpack(command.getSecondWord());
+                break;
+            case pack:
+                pack(command.getSecondWord());
+                break;
+            case unlock:
+                unlock(command.getSecondWord());
+                break;
+            case lock:
+                lock(command.getSecondWord());
+                break;
+            case quit:
                 wantToQuit = quit(command);
                 break;
+           
         }
         return wantToQuit;
-    }
+        
+        }
+        private void unpack(String itemName) {
+            if (itemName == null) {
+                Writer.println("Unpack what?");
+                return;
+            }
 
-	///////////////////////////////////////////////////////////////////////////
-	
+            Writer.println("From what?");
+            String containerName = Reader.getResponse();
+
+            Room currentRoom = player.getCurrentLocation();
+            Item item = currentRoom.getItem(containerName);
+
+            if (item instanceof Container) {
+                Container container = (Container) item;
+
+                Item removed = container.removeItem(itemName);
+
+                if (removed != null) {
+                    player.addItem(removed);
+                    Writer.println("You unpacked the " + itemName + ".");
+                } else {
+                    Writer.println("That item is not in the container.");
+                }
+            } else {
+                Writer.println("That is not a container.");
+            }
+        }
+        
+        private void pack(String itemName) {
+            if (itemName == null) {
+                Writer.println("Pack what?");
+                return;
+            }
+
+            Writer.println("In what?");
+            String containerName = Reader.getResponse();
+
+            Room currentRoom = player.getCurrentLocation();
+            Item item = currentRoom.getItem(containerName);
+
+            if (item instanceof Container) {
+                Container container = (Container) item;
+
+                Item playerItem = player.removeItem(itemName);
+
+                if (playerItem != null) {
+                    container.addItem(playerItem);
+                    Writer.println("You packed the " + itemName + ".");
+                } else {
+                    Writer.println("You don't have that item.");
+                }
+
+            } else {
+                Writer.println("That is not a container.");
+            }
+        }
 	/**
 	 * Implementation of the take command.
 	 */
@@ -103,7 +172,7 @@ public class Game {
 		}
 		String itemName = command.getSecondWord();
 		Room currentRoom = player.getCurrentLocation();
-		Items item = currentRoom.getItem(itemName);
+		Item item = currentRoom.getItem(itemName);
 
 		if (item == null) {
 			Writer.println("That item is not here.");
@@ -126,7 +195,7 @@ public class Game {
 			return;
 		}
 		String itemName = command.getSecondWord();
-		Items item = player.removeItem(itemName);
+		Item item = player.removeItem(itemName);
 
 		if (item == null) {
 			Writer.println("You are not carrying that.");
@@ -145,7 +214,7 @@ public class Game {
 			return;
 		}
 		String itemName = command.getSecondWord();
-		Items item = player.getCurrentLocation().getItem(itemName);
+		Item item = player.getCurrentLocation().getItem(itemName);
 		if (item == null) {
 			item = player.getItem(itemName);
 		}
@@ -185,9 +254,74 @@ public class Game {
 				turns++;
 				printLocationInformation();
 			}
+			
+			if (doorway.isLocked()) {
+			    Writer.println("The door is locked.");
+			    return;
+			}
 		}
 	}
+	private void unlock(String direction) {
+	    if (direction == null) {
+	        Writer.println("Unlock what?");
+	        return;
+	    }
 
+	    Door door = player.getCurrentLocation().getExit(direction);
+
+	    if (door == null) {
+	        Writer.println("There is no door.");
+	        return;
+	    }
+
+	    Writer.println("With what?");
+	    String keyName = Reader.getResponse();
+
+	    Item key = player.getItem(keyName);
+
+	    if (key == null) {
+	        Writer.println("You don't have that key.");
+	        return;
+	    }
+
+	    if (door.getKey().equals(key)) {
+	        door.setLocked(false);
+	        Writer.println("The door is now unlocked.");
+	    } else {
+	        Writer.println("That key doesn't work.");
+	    }
+	}
+	
+	private void lock(String direction) {
+	    if (direction == null) {
+	        Writer.println("Lock what?");
+	        return;
+	    }
+
+	    Door door = player.getCurrentLocation().getExit(direction);
+
+	    if (door == null) {
+	        Writer.println("There is no door.");
+	        return;
+	    }
+
+	    Writer.println("With what?");
+	    String keyName = Reader.getResponse();
+
+	    Item key = player.getItem(keyName);
+
+	    if (key == null) {
+	        Writer.println("You don't have that key.");
+	        return;
+	    }
+
+	    if (door.getKey().equals(key)) {
+	        door.setLocked(true);
+	        Writer.println("The door is now locked.");
+	    } else {
+	        Writer.println("That key doesn't work.");
+	    }
+	}
 	private void look() {
 		printLocationInformation();
 	}
@@ -201,7 +335,7 @@ public class Game {
 	}
 
 	
-}
+
 
 	/**
 	 * Take the player to the previous room.

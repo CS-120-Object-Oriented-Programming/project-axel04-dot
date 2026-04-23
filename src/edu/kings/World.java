@@ -24,6 +24,7 @@ public class World {
 	public World() {
 		rooms = new HashMap<String, Room>();
 		createRooms();
+		createItems();
 	}
 
 	/**
@@ -52,6 +53,20 @@ public class World {
 		rooms.put(theRoom.getName().toLowerCase(), theRoom);
 	}
 
+	private void createItems() {
+		Container backpack = new Container(
+			    "backpack",
+			    "A small leather backpack",  2, 10);
+		
+		Item key = new Items(
+			    "key", "A key",1,1	);
+		
+		backpack.addItem(key);
+	
+
+	    Room outside = getRoom("outside");
+	    outside.addItem(backpack);
+	}
 	/**
 	 * Helper method for creating doors between rooms.
 	 *
@@ -83,7 +98,7 @@ public class World {
 		Room lab = new Room("Computer Lab", "in the Computer Science and Math computing lab.");
 		Room classroom = new Room("Classroom", "in the classroom where the computer science classes are taught.");
 
-		// Adding all the rooms to the world.
+	
 		this.addRoom(outside);
 		this.addRoom(holyCross);
 		this.addRoom(essef);
@@ -94,7 +109,7 @@ public class World {
 		this.addRoom(lab);
 		this.addRoom(classroom);
 
-		// Creating all the doors between the rooms using the generic createDoor method.
+	
 		this.createDoor(essef, "south", outside);
 		this.createDoor(outside, "north", essef);
 

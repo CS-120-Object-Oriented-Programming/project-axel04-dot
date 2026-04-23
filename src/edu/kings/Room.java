@@ -27,7 +27,7 @@ public class Room {
     private HashMap<String, Door> exits;
     
     /** The items in this room. */
-    private HashMap<String, Items> items; // Requisito Lab 08 
+    private HashMap<String, Item> items;
 
     /**
      * Static initializer.
@@ -47,7 +47,7 @@ public class Room {
         this.name = name;
         this.description = description;
         this.exits = new HashMap<String, Door>();
-        this.items = new HashMap<String, Items>(); // Inicialización crucial 
+        this.items = new HashMap<String, Item>(); 
         counter++;
     }
 
@@ -55,8 +55,8 @@ public class Room {
      * Add an item to this room. 
      * @param item The item to be added.
      */
-    public void addItem(Items item) {
-        items.put(item.getName().toLowerCase(), item); 
+    public void addItem(Item item) {
+        Item.put(item.getName().toLowerCase(), item); 
     }
 
     /**
@@ -64,8 +64,8 @@ public class Room {
      * @param name The name of the item.
      * @return The item or null if not found.
      */
-    public Items getItem(String name) {
-        return items.get(name.toLowerCase()); 
+    public Item getItem(String name) {
+        return Item.get(name.toLowerCase()); 
     }
 
     /**
@@ -73,8 +73,8 @@ public class Room {
      * @param name The name of the item to remove.
      * @return The actual item removed, or null if it doesn't exist. 
      */
-    public Items removeItem(String name) {
-        return items.remove(name.toLowerCase()); 
+    public Item removeItem(String name) {
+        return Item.remove(name.toLowerCase()); 
     }
 
     /**
