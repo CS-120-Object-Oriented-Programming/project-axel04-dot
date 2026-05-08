@@ -23,11 +23,11 @@ public class Player {
     public Player(Room startingRoom) {
         this.currentLocation = startingRoom;
         this.inventory = new HashMap<String, Item>();
-        this.maxHp = 20;
-        this.currentHp = 20;
+        this.maxHp = 5;
+        this.currentHp = 5;
         this.baseDamage = 3;
-        this.flasks = 4;
-        this.maxFlasks = 4;
+        this.flasks = 3;
+        this.maxFlasks = 3;
         this.weapon = null;
     }
 

@@ -30,10 +30,7 @@ public class World {
 	private void createItems() {
 	  
 	
-	    Item liebeKey    = new Item("Liebe's Key",    "A key stained with tears.",     1, 0);
-	    Item alanKey     = new Item("Alan's Key",     "A key that feels weightless.",  1, 0);
-	    Item kiroKey     = new Item("Kiro's Key",     "A key burning with willpower.", 1, 0);
-	    Item identityKey = new Item("Identity's Key", "A key that reflects yourself.", 1, 0);
+	   
 
 	    
 	    Item statue1 = new Item("Statue", "A glowing statue. Rest here to recover.", 0, 0);
@@ -42,7 +39,7 @@ public class World {
 
 	
 	    Room libertadBossRoom = getRoom("freedom Room");
-	    Room voluntadBossRoom = getRoom("determination Room");
+
 	    Room identidadBossRoom = getRoom("identity Room");
 	    Room finalBossRoom = getRoom("reflection");
 

@@ -5,6 +5,8 @@
 
 Question 1 about 15:
 Do you rely more on luck than a plan?
+on
+answer yes or not ._. .
 no
 
 Question 2 about 15:
@@ -45,10 +47,6 @@ no
 
 Question 11 about 15:
 Do you accept the end of things without fear?
-on
-answer yes or not ._. .
-on
-answer yes or not ._. .
 no
 
 Question 12 about 15:
@@ -85,662 +83,15 @@ no
 15. 🍃 Green
 no
 write the number of your election 
-no
-write the number of your election 
-10
-your soul partner is  🪄 Magic
-Down to every last drop
+3
+your soul partner is  🗡️ A GreatSword
+AAAAAAAAHHHHH !!!!
 
 
 Welcome to Souls
 Souls is a new, incredibly boring adventure game.
 Type 'help' if you need help.
 
-Hole:
-You are in one Hole.
-Exits: east north west 
-Items: backpack 
-
-> go west
-Hidden Path:
-You are Adventures Path
-Exits: east west 
-
-An enemy appears!
-=================================
-  Wanderer appears!
-=================================
-
---- Status ---
-Your HP: 20/20  |  Flasks: 4
-Wanderer | HP: 5/5
-
-What will you do?
-1. Attack
-2. Skill  (Zoltraak)
-3. Ult    (Full Cannon)
-4. Dodge
-5. Use Flask (4 left)
-
-1
-
-You attack for 3 damage!
-Wanderer attacks for 2 damage!
-You have 18 HP left.
-
---- Status ---
-Your HP: 18/20  |  Flasks: 4
-Wanderer | HP: 2/5
-
-What will you do?
-1. Attack
-2. Skill  (Zoltraak)
-3. Ult    (Full Cannon)
-4. Dodge
-5. Use Flask (4 left)
-
-1
-
-You attack for 3 damage!
-You defeated Wanderer!
-
-> go west
-Hidden Path:
-You are Adventures Path
-Exits: east west 
-
-> 1
-I don't know what you mean...
-> go west
-Fading Garden:
-You are Dead flowers cover the ground.
-Exits: east south 
-
-An enemy appears!
-=================================
-  Dead Flower Spirit appears!
-=================================
-
---- Status ---
-Your HP: 19/21  |  Flasks: 4
-Dead Flower Spirit | HP: 5/5
-
-What will you do?
-1. Attack
-2. Skill  (Zoltraak)
-3. Ult    (Full Cannon)
-4. Dodge
-5. Use Flask (4 left)
-
-1
-
-You attack for 3 damage!
-Dead Flower Spirit attacks for 2 damage!
-You have 17 HP left.
-
---- Status ---
-Your HP: 17/21  |  Flasks: 4
-Dead Flower Spirit | HP: 2/5
-
-What will you do?
-1. Attack
-2. Skill  (Zoltraak)
-3. Ult    (Full Cannon)
-4. Dodge
-5. Use Flask (4 left)
-
-1
-
-You attack for 3 damage!
-You defeated Dead Flower Spirit!
-
-> go west
-There is no door!
-> go south
-Lonely Bridge:
-You are A bridge surrounded by darkness.
-Exits: south north west 
-
-An enemy appears!
-=================================
-  Bridge Shade appears!
-=================================
-
---- Status ---
-Your HP: 18/22  |  Flasks: 4
-Bridge Shade | HP: 5/5
-
-What will you do?
-1. Attack
-2. Skill  (Zoltraak)
-3. Ult    (Full Cannon)
-4. Dodge
-5. Use Flask (4 left)
-
-2
-
-You use Zoltraak!
-
-Zoltraak! 3 damage!
-Bridge Shade attacks for 2 damage!
-You have 16 HP left.
-
---- Status ---
-Your HP: 16/22  |  Flasks: 4
-Bridge Shade | HP: 2/5
-
-What will you do?
-1. Attack
-2. Skill  (Zoltraak)
-3. Ult    (Full Cannon)
-4. Dodge
-5. Use Flask (4 left)
-
-2
-
-You use Zoltraak!
-
-Zoltraak! 3 damage!
-You defeated Bridge Shade!
-
-> go south
-Dust Road:
-You are A dry road that tests your will.
-Exits: east north 
-
-An enemy appears!
-=================================
-  Dust Wraith appears!
-=================================
-
---- Status ---
-Your HP: 17/23  |  Flasks: 4
-Dust Wraith | HP: 5/5
-
-What will you do?
-1. Attack
-2. Skill  (Zoltraak)
-3. Ult    (Full Cannon)
-4. Dodge
-5. Use Flask (4 left)
-
-1
-
-You attack for 3 damage!
-Dust Wraith attacks for 2 damage!
-You have 15 HP left.
-
---- Status ---
-Your HP: 15/23  |  Flasks: 4
-Dust Wraith | HP: 2/5
-
-What will you do?
-1. Attack
-2. Skill  (Zoltraak)
-3. Ult    (Full Cannon)
-4. Dodge
-5. Use Flask (4 left)
-
-1
-
-You attack for 3 damage!
-You defeated Dust Wraith!
-
-> go south
-There is no door!
-> go east
-Burning Trail:
-You are The heat pushes your determination.
-Exits: south west 
-
-An enemy appears!
-=================================
-  Ember Spirit appears!
-=================================
-
---- Status ---
-Your HP: 16/24  |  Flasks: 4
-Ember Spirit | HP: 5/5
-
-What will you do?
-1. Attack
-2. Skill  (Zoltraak)
-3. Ult    (Full Cannon)
-4. Dodge
-5. Use Flask (4 left)
-
-1
-
-You attack for 3 damage!
-Ember Spirit attacks for 2 damage!
-You have 14 HP left.
-
---- Status ---
-Your HP: 14/24  |  Flasks: 4
-Ember Spirit | HP: 2/5
-
-What will you do?
-1. Attack
-2. Skill  (Zoltraak)
-3. Ult    (Full Cannon)
-4. Dodge
-5. Use Flask (4 left)
-
-1
-
-You attack for 3 damage!
-You defeated Ember Spirit!
-
-> go east
-There is no door!
-> go south
-Heart District:
-You are A place shaped by emotions and memories.
-Exits: north west 
-
-An enemy appears!
-=================================
-  Lost Soul appears!
-=================================
-
---- Status ---
-Your HP: 15/25  |  Flasks: 4
-Lost Soul | HP: 5/5
-
-What will you do?
-1. Attack
-2. Skill  (Zoltraak)
-3. Ult    (Full Cannon)
-4. Dodge
-5. Use Flask (4 left)
-
-1
-
-You attack for 3 damage!
-Lost Soul attacks for 2 damage!
-You have 13 HP left.
-
---- Status ---
-Your HP: 13/25  |  Flasks: 4
-Lost Soul | HP: 2/5
-
-What will you do?
-1. Attack
-2. Skill  (Zoltraak)
-3. Ult    (Full Cannon)
-4. Dodge
-5. Use Flask (4 left)
-
-1
-
-You attack for 3 damage!
-You defeated Lost Soul!
-
-An enemy appears!
-=================================
-  Broken Heart appears!
-=================================
-
---- Status ---
-Your HP: 14/26  |  Flasks: 4
-Broken Heart | HP: 5/5
-
-What will you do?
-1. Attack
-2. Skill  (Zoltraak)
-3. Ult    (Full Cannon)
-4. Dodge
-5. Use Flask (4 left)
-
-1
-
-You attack for 3 damage!
-Broken Heart attacks for 2 damage!
-You have 12 HP left.
-
---- Status ---
-Your HP: 12/26  |  Flasks: 4
-Broken Heart | HP: 2/5
-
-What will you do?
-1. Attack
-2. Skill  (Zoltraak)
-3. Ult    (Full Cannon)
-4. Dodge
-5. Use Flask (4 left)
-
-1
-
-You attack for 3 damage!
-You defeated Broken Heart!
-
-> go east
-There is no door!
-> go west
-Scarlet Hall:
-You are The walls pulse like a heartbeat.
-Exits: east west 
-
-An enemy appears!
-=================================
-  Phantom appears!
-=================================
-
---- Status ---
-Your HP: 13/27  |  Flasks: 4
-Phantom | HP: 5/5
-
-What will you do?
-1. Attack
-2. Skill  (Zoltraak)
-3. Ult    (Full Cannon)
-4. Dodge
-5. Use Flask (4 left)
-
-2
-
-You use Zoltraak!
-
-Zoltraak! 3 damage!
-Phantom attacks for 2 damage!
-You have 11 HP left.
-
---- Status ---
-Your HP: 11/27  |  Flasks: 4
-Phantom | HP: 2/5
-
-What will you do?
-1. Attack
-2. Skill  (Zoltraak)
-3. Ult    (Full Cannon)
-4. Dodge
-5. Use Flask (4 left)
-
-2
-
-You use Zoltraak!
-
-Zoltraak! 3 damage!
-You defeated Phantom!
-
-> go west
-Love Room:
-You are Liebe - Representation of Lost Love
-Exits: east 
-
-=================================
-  Liebe appears!
-=================================
-
---- Status ---
-Your HP: 12/28  |  Flasks: 4
-Liebe | HP: 20/20
-
-What will you do?
-1. Attack
-2. Skill  (Zoltraak)
-3. Ult    (Full Cannon)
-4. Dodge
-5. Use Flask (4 left)
-
-3
-
-You use Full Cannon!
-
-Full Cannon — Final Flash! 6 damage!
-Liebe uses I Love You! Deals 3 damage and recovers 1 HP.
-You have 9 HP left.
-
---- Status ---
-Your HP: 9/28  |  Flasks: 4
-Liebe | HP: 14/20
-
-What will you do?
-1. Attack
-2. Skill  (Zoltraak)
-3. Ult    [already used]
-4. Dodge
-5. Use Flask (4 left)
-
-1
-
-You attack for 3 damage!
-Liebe uses Your Like My Brother — normal hit for 3 damage.
-You have 6 HP left.
-
---- Status ---
-Your HP: 6/28  |  Flasks: 4
-Liebe | HP: 11/20
-
-What will you do?
-1. Attack
-2. Skill  (Zoltraak)
-3. Ult    [already used]
-4. Dodge
-5. Use Flask (4 left)
-
-2
-
-You use Zoltraak!
-
-Zoltraak! 3 damage!
-Liebe uses I Love You! Deals 3 damage and recovers 1 HP.
-You have 3 HP left.
-
---- Status ---
-Your HP: 3/28  |  Flasks: 4
-Liebe | HP: 8/20
-
-What will you do?
-1. Attack
-2. Skill  (Zoltraak)
-3. Ult    [already used]
-4. Dodge
-5. Use Flask (4 left)
-
-4
-
-You prepare to dodge...
-You dodge the attack!
---- Status ---
-Your HP: 3/28  |  Flasks: 4
-Liebe | HP: 8/20
-
-What will you do?
-1. Attack
-2. Skill  (Zoltraak)
-3. Ult    [already used]
-4. Dodge
-5. Use Flask (4 left)
-
-5
-
-You drink a flask and recover 7 HP.
-Liebe uses I Love You! Deals 3 damage and recovers 1 HP.
-You have 7 HP left.
-
---- Status ---
-Your HP: 7/28  |  Flasks: 3
-Liebe | HP: 8/20
-
-What will you do?
-1. Attack
-2. Skill  (Zoltraak)
-3. Ult    [already used]
-4. Dodge
-5. Use Flask (3 left)
-
-1
-
-You attack for 3 damage!
-Liebe uses I Love You! Deals 3 damage and recovers 1 HP.
-You have 4 HP left.
-
---- Status ---
-Your HP: 4/28  |  Flasks: 3
-Liebe | HP: 5/20
-
-What will you do?
-1. Attack
-2. Skill  (Zoltraak)
-3. Ult    [already used]
-4. Dodge
-5. Use Flask (3 left)
-
-1
-
-You attack for 3 damage!
-Liebe attacks you for 3 damage!
-You have 1 HP left.
-
---- Status ---
-Your HP: 1/28  |  Flasks: 3
-Liebe | HP: 2/20
-
-What will you do?
-1. Attack
-2. Skill  (Zoltraak)
-3. Ult    [already used]
-4. Dodge
-5. Use Flask (3 left)
-
-4
-
-You prepare to dodge...
-You dodge the attack!
---- Status ---
-Your HP: 1/28  |  Flasks: 3
-Liebe | HP: 2/20
-
-What will you do?
-1. Attack
-2. Skill  (Zoltraak)
-3. Ult    [already used]
-4. Dodge
-5. Use Flask (3 left)
-
-4
-
-You prepare to dodge...
-You dodge the attack!
---- Status ---
-Your HP: 1/28  |  Flasks: 3
-Liebe | HP: 2/20
-
-What will you do?
-1. Attack
-2. Skill  (Zoltraak)
-3. Ult    [already used]
-4. Dodge
-5. Use Flask (3 left)
-
-4
-
-You prepare to dodge...
-You dodge the attack!
---- Status ---
-Your HP: 1/28  |  Flasks: 3
-Liebe | HP: 2/20
-
-What will you do?
-1. Attack
-2. Skill  (Zoltraak)
-3. Ult    [already used]
-4. Dodge
-5. Use Flask (3 left)
-
-4
-
-You prepare to dodge...
-You dodge the attack!
---- Status ---
-Your HP: 1/28  |  Flasks: 3
-Liebe | HP: 2/20
-
-What will you do?
-1. Attack
-2. Skill  (Zoltraak)
-3. Ult    [already used]
-4. Dodge
-5. Use Flask (3 left)
-
-4
-
-You prepare to dodge...
-You dodge the attack!
---- Status ---
-Your HP: 1/28  |  Flasks: 3
-Liebe | HP: 2/20
-
-What will you do?
-1. Attack
-2. Skill  (Zoltraak)
-3. Ult    [already used]
-4. Dodge
-5. Use Flask (3 left)
-
-1
-
-You attack for 3 damage!
-You defeated Liebe!
-
-You obtained Liebe's Key!
-> go east
-Scarlet Hall:
-You are The walls pulse like a heartbeat.
-Exits: east west 
-
-> go east
-Heart District:
-You are A place shaped by emotions and memories.
-Exits: north west 
-
-> go north
-Burning Trail:
-You are The heat pushes your determination.
-Exits: south west 
-
-> go north
-There is no door!
-> go west
-Dust Road:
-You are A dry road that tests your will.
-Exits: east north 
-
-> go north
-Lonely Bridge:
-You are A bridge surrounded by darkness.
-Exits: south north west 
-
-> go west
-Rest Area:
-You are A small peaceful place to recover.
-Exits: east 
-Items: statue 
-
-> examine statue
-The statue glows... HP restored and flasks refilled.
-> go east
-Lonely Bridge:
-You are A bridge surrounded by darkness.
-Exits: south north west 
-
-> go north
-Fading Garden:
-You are Dead flowers cover the ground.
-Exits: east south 
-
-> go east
-Hidden Path:
-You are Adventures Path
-Exits: east west 
-
-> go east
-Hidden Path:
-You are Adventures Path
-Exits: east west 
-
-> go east
 Hole:
 You are in one Hole.
 Exits: east north west 
@@ -757,23 +108,24 @@ An enemy appears!
 =================================
 
 --- Status ---
-Your HP: 31/31  |  Flasks: 4
+Your HP: 5/5  |  Flasks: 3
 Wind Shade | HP: 5/5
 
 What will you do?
 1. Attack
-2. Skill  (Zoltraak)
-3. Ult    (Full Cannon)
+2. Skill  (Lion Claw)
+3. Ult    (Berserker)
 4. Dodge
-5. Use Flask (4 left)
+5. Use Flask (3 left)
 
-3
+2
 
-You use Full Cannon!
+You use Lion Claw!
 
-Full Cannon — Final Flash! 6 damage!
+Spinning Slash! 5 damage!
 You defeated Wind Shade!
 
+You defeatdWind Shade
 > go north
 Wind Passage:
 You are Strong winds push against you.
@@ -785,447 +137,26 @@ An enemy appears!
 =================================
 
 --- Status ---
-Your HP: 32/32  |  Flasks: 4
+Your HP: 6/6  |  Flasks: 3
 Storm Spirit | HP: 5/5
 
 What will you do?
 1. Attack
-2. Skill  (Zoltraak)
-3. Ult    (Full Cannon)
+2. Skill  (Lion Claw)
+3. Ult    (Berserker)
 4. Dodge
-5. Use Flask (4 left)
-
-3
-
-You use Full Cannon!
-
-Full Cannon — Final Flash! 6 damage!
-You defeated Storm Spirit!
-
-> go north
-There is no door!
-> go east
-Ruined Gate:
-You are The remains of an abandoned entrance.
-Exits: east north west 
-
-> go east
-Ruined Gate:
-You are The remains of an abandoned entrance.
-Exits: east west 
-
-An enemy appears!
-=================================
-  Gate Guardian appears!
-=================================
-
---- Status ---
-Your HP: 33/33  |  Flasks: 4
-Gate Guardian | HP: 5/5
-
-What will you do?
-1. Attack
-2. Skill  (Zoltraak)
-3. Ult    (Full Cannon)
-4. Dodge
-5. Use Flask (4 left)
-
-1
-
-You attack for 3 damage!
-Gate Guardian attacks for 2 damage!
-You have 31 HP left.
-
---- Status ---
-Your HP: 31/33  |  Flasks: 4
-Gate Guardian | HP: 2/5
-
-What will you do?
-1. Attack
-2. Skill  (Zoltraak)
-3. Ult    (Full Cannon)
-4. Dodge
-5. Use Flask (4 left)
-
-1
-
-You attack for 3 damage!
-You defeated Gate Guardian!
-
-> go east
-Campfire:
-You are A quiet place illuminated by weak flames.
-Exits: south west 
-Items: statue 
-
-> go west
-Ruined Gate:
-You are The remains of an abandoned entrance.
-Exits: east west 
-
-> go west
-Ruined Gate:
-You are The remains of an abandoned entrance.
-Exits: east north west 
-
-> go north
-Freedom Valley:
-You are Chains broken long ago lie on the ground.
-Exits: south north 
-
-An enemy appears!
-=================================
-  Chain Shade appears!
-=================================
-
---- Status ---
-Your HP: 32/34  |  Flasks: 4
-Chain Shade | HP: 5/5
-
-What will you do?
-1. Attack
-2. Skill  (Zoltraak)
-3. Ult    (Full Cannon)
-4. Dodge
-5. Use Flask (4 left)
-
-3
-
-You use Full Cannon!
-
-Full Cannon — Final Flash! 6 damage!
-You defeated Chain Shade!
-
-An enemy appears!
-=================================
-  Caged Spirit appears!
-=================================
-
---- Status ---
-Your HP: 33/35  |  Flasks: 4
-Caged Spirit | HP: 6/6
-
-What will you do?
-1. Attack
-2. Skill  (Zoltraak)
-3. Ult    (Full Cannon)
-4. Dodge
-5. Use Flask (4 left)
-
-3
-
-You use Full Cannon!
-
-Full Cannon — Final Flash! 6 damage!
-You defeated Caged Spirit!
-
-> go north
-Freedom path:
-You are Path of liberty
-Exits: east south 
-
-An enemy appears!
-=================================
-  Shadow Guard appears!
-=================================
-
---- Status ---
-Your HP: 34/36  |  Flasks: 4
-Shadow Guard | HP: 6/6
-
-What will you do?
-1. Attack
-2. Skill  (Zoltraak)
-3. Ult    (Full Cannon)
-4. Dodge
-5. Use Flask (4 left)
-
-1
-
-You attack for 3 damage!
-Shadow Guard attacks for 3 damage!
-You have 31 HP left.
-
---- Status ---
-Your HP: 31/36  |  Flasks: 4
-Shadow Guard | HP: 3/6
-
-What will you do?
-1. Attack
-2. Skill  (Zoltraak)
-3. Ult    (Full Cannon)
-4. Dodge
-5. Use Flask (4 left)
-
-1
-
-You attack for 3 damage!
-You defeated Shadow Guard!
-
-> 1
-I don't know what you mean...
-> go north
-There is no door!
-> go east
-Freedom Room:
-You are Alan - Representation of Freedom
-Exits: west 
-
-=================================
-  Alan appears!
-=================================
-
---- Status ---
-Your HP: 32/37  |  Flasks: 4
-Alan | HP: 25/25
-
-What will you do?
-1. Attack
-2. Skill  (Zoltraak)
-3. Ult    (Full Cannon)
-4. Dodge
-5. Use Flask (4 left)
-
-1
-
-You attack for 3 damage!
-Alan uses Restringed! You can only dodge next turn.
-You have 32 HP left.
-
---- Status ---
-Your HP: 32/37  |  Flasks: 4
-Alan | HP: 22/25
-
-What will you do?
-1. Attack
-2. Skill  (Zoltraak)
-3. Ult    (Full Cannon)
-4. Dodge
-5. Use Flask (4 left)
-
-1
-
-You attack for 3 damage!
-Alan uses Tranquilo! Your ult is sealed for 2 turns.
-You have 32 HP left.
-
---- Status ---
-Your HP: 32/37  |  Flasks: 4
-Alan | HP: 19/25
-
-What will you do?
-1. Attack
-2. Skill  (Zoltraak)
-3. Ult    (Full Cannon)
-4. Dodge
-5. Use Flask (4 left)
-
-3
-
-[Your ult is sealed!]
-Your ult is sealed!
-Alan uses Restringed! You can only dodge next turn.
-You have 32 HP left.
-
---- Status ---
-Your HP: 32/37  |  Flasks: 4
-Alan | HP: 19/25
-
-What will you do?
-1. Attack
-2. Skill  (Zoltraak)
-3. Ult    (Full Cannon)
-4. Dodge
-5. Use Flask (4 left)
-
-1
-
-[Your ult is sealed!]
-You attack for 3 damage!
-Alan uses Tranquilo! Your ult is sealed for 2 turns.
-You have 32 HP left.
-
---- Status ---
-Your HP: 32/37  |  Flasks: 4
-Alan | HP: 16/25
-
-What will you do?
-1. Attack
-2. Skill  (Zoltraak)
-3. Ult    (Full Cannon)
-4. Dodge
-5. Use Flask (4 left)
-
-3
-
-[Your ult is sealed!]
-Your ult is sealed!
-Alan uses Tranquilo! Your ult is sealed for 2 turns.
-You have 32 HP left.
-
---- Status ---
-Your HP: 32/37  |  Flasks: 4
-Alan | HP: 16/25
-
-What will you do?
-1. Attack
-2. Skill  (Zoltraak)
-3. Ult    (Full Cannon)
-4. Dodge
-5. Use Flask (4 left)
-
-3
-
-[Your ult is sealed!]
-Your ult is sealed!
-Alan uses Tranquilo! Your ult is sealed for 2 turns.
-You have 32 HP left.
-
---- Status ---
-Your HP: 32/37  |  Flasks: 4
-Alan | HP: 16/25
-
-What will you do?
-1. Attack
-2. Skill  (Zoltraak)
-3. Ult    (Full Cannon)
-4. Dodge
-5. Use Flask (4 left)
-
-3
-
-[Your ult is sealed!]
-Your ult is sealed!
-Alan attacks you for 4 damage!
-You have 28 HP left.
-
---- Status ---
-Your HP: 28/37  |  Flasks: 4
-Alan | HP: 16/25
-
-What will you do?
-1. Attack
-2. Skill  (Zoltraak)
-3. Ult    (Full Cannon)
-4. Dodge
-5. Use Flask (4 left)
-
-3
-
-[Your ult is sealed!]
-Your ult is sealed!
-Alan uses Pressure! If you repeat the same move twice, it will be reflected back.
-You have 28 HP left.
-
---- Status ---
-Your HP: 28/37  |  Flasks: 4
-Alan | HP: 16/25
-
-What will you do?
-1. Attack
-2. Skill  (Zoltraak)
-3. Ult    (Full Cannon)
-4. Dodge
-5. Use Flask (4 left)
-
-3
-
-You use Full Cannon!
-
-Full Cannon — Final Flash! 6 damage!
-Alan attacks you for 4 damage!
-You have 24 HP left.
-
---- Status ---
-Your HP: 24/37  |  Flasks: 4
-Alan | HP: 10/25
-
-What will you do?
-1. Attack
-2. Skill  (Zoltraak)
-3. Ult    [already used]
-4. Dodge
-5. Use Flask (4 left)
+5. Use Flask (3 left)
 
 2
 
-You use Zoltraak!
+You use Lion Claw!
 
-Zoltraak! 3 damage!
-Alan uses Restringed! You can only dodge next turn.
-You have 24 HP left.
+Spinning Slash! 5 damage!
+You defeated Storm Spirit!
 
---- Status ---
-Your HP: 24/37  |  Flasks: 4
-Alan | HP: 7/25
-
-What will you do?
-1. Attack
-2. Skill  (Zoltraak)
-3. Ult    [already used]
-4. Dodge
-5. Use Flask (4 left)
-
-1
-
-You attack for 3 damage!
-Alan uses Pressure! If you repeat the same move twice, it will be reflected back.
-You have 24 HP left.
-
---- Status ---
-Your HP: 24/37  |  Flasks: 4
-Alan | HP: 4/25
-
-What will you do?
-1. Attack
-2. Skill  (Zoltraak)
-3. Ult    [already used]
-4. Dodge
-5. Use Flask (4 left)
-
-1
-
-You attack for 3 damage!
-Alan uses Restringed! You can only dodge next turn.
-You have 24 HP left.
-
---- Status ---
-Your HP: 24/37  |  Flasks: 4
-Alan | HP: 1/25
-
-What will you do?
-1. Attack
-2. Skill  (Zoltraak)
-3. Ult    [already used]
-4. Dodge
-5. Use Flask (4 left)
-
-1
-
-You attack for 3 damage!
-You defeated Alan!
-
-You obtained Alan's Key!
-> go west
-Freedom path:
-You are Path of liberty
-Exits: east south 
-
-> go south
-Freedom Valley:
-You are Chains broken long ago lie on the ground.
-Exits: south north 
-
-> go south
-Ruined Gate:
-You are The remains of an abandoned entrance.
-Exits: east north west 
-
-> go west
-Wind Passage:
-You are Strong winds push against you.
-Exits: east south west 
-
+You defeatdStorm Spirit
+> 1
+I don't know what you mean...
 > go west
 Willpower Arena:
 You are Only those with strong determination survive.
@@ -1237,114 +168,82 @@ An enemy appears!
 =================================
 
 --- Status ---
-Your HP: 27/40  |  Flasks: 4
+Your HP: 7/7  |  Flasks: 3
 Weak Will | HP: 7/7
 
 What will you do?
 1. Attack
-2. Skill  (Zoltraak)
-3. Ult    (Full Cannon)
+2. Skill  (Lion Claw)
+3. Ult    (Berserker)
 4. Dodge
-5. Use Flask (4 left)
+5. Use Flask (3 left)
 
-3
+2
 
-You use Full Cannon!
+You use Lion Claw!
 
-Full Cannon — Final Flash! 6 damage!
+Spinning Slash! 5 damage!
 Weak Will attacks for 3 damage!
-You have 24 HP left.
+You have 4 HP left.
 
 --- Status ---
-Your HP: 24/40  |  Flasks: 4
-Weak Will | HP: 1/7
+Your HP: 4/7  |  Flasks: 3
+Weak Will | HP: 2/7
 
 What will you do?
 1. Attack
-2. Skill  (Zoltraak)
-3. Ult    [already used]
+2. Skill  (Lion Claw)
+3. Ult    (Berserker)
 4. Dodge
-5. Use Flask (4 left)
-
-3
-
-Already used your ult.
-Weak Will attacks for 3 damage!
-You have 21 HP left.
-
---- Status ---
-Your HP: 21/40  |  Flasks: 4
-Weak Will | HP: 1/7
-
-What will you do?
-1. Attack
-2. Skill  (Zoltraak)
-3. Ult    [already used]
-4. Dodge
-5. Use Flask (4 left)
-
-3
-
-Already used your ult.
-Weak Will attacks for 3 damage!
-You have 18 HP left.
-
---- Status ---
-Your HP: 18/40  |  Flasks: 4
-Weak Will | HP: 1/7
-
-What will you do?
-1. Attack
-2. Skill  (Zoltraak)
-3. Ult    [already used]
-4. Dodge
-5. Use Flask (4 left)
+5. Use Flask (3 left)
 
 1
 
 You attack for 3 damage!
 You defeated Weak Will!
 
+You defeatdWeak Will
 An enemy appears!
 =================================
   Doubt Shade appears!
 =================================
 
 --- Status ---
-Your HP: 19/41  |  Flasks: 4
+Your HP: 5/8  |  Flasks: 3
 Doubt Shade | HP: 5/5
 
 What will you do?
 1. Attack
-2. Skill  (Zoltraak)
-3. Ult    (Full Cannon)
+2. Skill  (Lion Claw)
+3. Ult    (Berserker)
 4. Dodge
-5. Use Flask (4 left)
+5. Use Flask (3 left)
 
-go west
+1
 
-Invalid action. You lose your turn.
+You attack for 3 damage!
 Doubt Shade attacks for 2 damage!
-You have 17 HP left.
+You have 3 HP left.
 
 --- Status ---
-Your HP: 17/41  |  Flasks: 4
-Doubt Shade | HP: 5/5
+Your HP: 3/8  |  Flasks: 3
+Doubt Shade | HP: 2/5
 
 What will you do?
 1. Attack
-2. Skill  (Zoltraak)
-3. Ult    (Full Cannon)
+2. Skill  (Lion Claw)
+3. Ult    (Berserker)
 4. Dodge
-5. Use Flask (4 left)
+5. Use Flask (3 left)
 
-3
+2
 
-You use Full Cannon!
+You use Lion Claw!
 
-Full Cannon — Final Flash! 6 damage!
+Spinning Slash! 5 damage!
 You defeated Doubt Shade!
 
+You defeatdDoubt Shade
 > go west
 Endurance Path:
 You are Every step feels heavier than the last.
@@ -1356,42 +255,77 @@ An enemy appears!
 =================================
 
 --- Status ---
-Your HP: 18/42  |  Flasks: 4
+Your HP: 4/9  |  Flasks: 3
 Exhausted Soul | HP: 6/6
 
 What will you do?
 1. Attack
-2. Skill  (Zoltraak)
-3. Ult    (Full Cannon)
+2. Skill  (Lion Claw)
+3. Ult    (Berserker)
 4. Dodge
-5. Use Flask (4 left)
+5. Use Flask (3 left)
 
-2
+5
 
-You use Zoltraak!
-
-Zoltraak! 3 damage!
+You drink a flask and recover 2 HP.
 Exhausted Soul attacks for 2 damage!
-You have 16 HP left.
+You have 4 HP left.
 
 --- Status ---
-Your HP: 16/42  |  Flasks: 4
-Exhausted Soul | HP: 3/6
+Your HP: 4/9  |  Flasks: 2
+Exhausted Soul | HP: 6/6
 
 What will you do?
 1. Attack
-2. Skill  (Zoltraak)
-3. Ult    (Full Cannon)
+2. Skill  (Lion Claw)
+3. Ult    (Berserker)
 4. Dodge
-5. Use Flask (4 left)
+5. Use Flask (2 left)
 
 2
 
-You use Zoltraak!
+You use Lion Claw!
 
-Zoltraak! 3 damage!
+Spinning Slash! 5 damage!
+Exhausted Soul attacks for 2 damage!
+You have 2 HP left.
+
+--- Status ---
+Your HP: 2/9  |  Flasks: 2
+Exhausted Soul | HP: 1/6
+
+What will you do?
+1. Attack
+2. Skill  (Lion Claw)
+3. Ult    (Berserker)
+4. Dodge
+5. Use Flask (2 left)
+
+5
+
+You drink a flask and recover 2 HP.
+Exhausted Soul attacks for 2 damage!
+You have 2 HP left.
+
+--- Status ---
+Your HP: 2/9  |  Flasks: 1
+Exhausted Soul | HP: 1/6
+
+What will you do?
+1. Attack
+2. Skill  (Lion Claw)
+3. Ult    (Berserker)
+4. Dodge
+5. Use Flask (1 left)
+
+2
+
+You use Lion Claw!
+
+Spinning Slash! 5 damage!
 You defeated Exhausted Soul!
 
+You defeatdExhausted Soul
 > go west
 There is no door!
 > go north
@@ -1404,203 +338,20 @@ Exits: south
 =================================
 
 --- Status ---
-Your HP: 17/43  |  Flasks: 4
+Your HP: 3/10  |  Flasks: 1
 Kiro | HP: 30/30
 
 What will you do?
 1. Attack
-2. Skill  (Zoltraak)
-3. Ult    (Full Cannon)
+2. Skill  (Lion Claw)
+3. Ult    (Berserker)
 4. Dodge
-5. Use Flask (4 left)
+5. Use Flask (1 left)
 
-1
+5
 
-You attack for 3 damage!
-Kiro attacks you for 4 damage!
-You have 13 HP left.
-
---- Status ---
-Your HP: 13/43  |  Flasks: 4
-Kiro | HP: 27/30
-
-What will you do?
-1. Attack
-2. Skill  (Zoltraak)
-3. Ult    (Full Cannon)
-4. Dodge
-5. Use Flask (4 left)
-
-2
-
-You use Zoltraak!
-
-Zoltraak! 3 damage!
-Kiro attacks with determination for 4 damage!
-(Last Breath is passive — Kiro will survive one killing blow.)
-You have 9 HP left.
-
---- Status ---
-Your HP: 9/43  |  Flasks: 4
-Kiro | HP: 24/30
-
-What will you do?
-1. Attack
-2. Skill  (Zoltraak)
-3. Ult    (Full Cannon)
-4. Dodge
-5. Use Flask (4 left)
-
-3
-
-You use Full Cannon!
-
-Full Cannon — Final Flash! 6 damage!
+You drink a flask and recover 2 HP.
 Kiro uses Kaio Ken! Attack boosted (+1). Hits for 5!
-You have 4 HP left.
-
---- Status ---
-Your HP: 4/43  |  Flasks: 4
-Kiro | HP: 18/30
-
-What will you do?
-1. Attack
-2. Skill  (Zoltraak)
-3. Ult    [already used]
-4. Dodge
-5. Use Flask (4 left)
-
-5
-
-You drink a flask and recover 10 HP.
-Kiro uses Kaio Ken! Attack boosted (+2). Hits for 6!
-You have 8 HP left.
-
---- Status ---
-Your HP: 8/43  |  Flasks: 3
-Kiro | HP: 18/30
-
-What will you do?
-1. Attack
-2. Skill  (Zoltraak)
-3. Ult    [already used]
-4. Dodge
-5. Use Flask (3 left)
-
-5
-
-You drink a flask and recover 10 HP.
-Kiro attacks with determination for 4 damage!
-(Last Breath is passive — Kiro will survive one killing blow.)
-You have 14 HP left.
-
---- Status ---
-Your HP: 14/43  |  Flasks: 2
-Kiro | HP: 18/30
-
-What will you do?
-1. Attack
-2. Skill  (Zoltraak)
-3. Ult    [already used]
-4. Dodge
-5. Use Flask (2 left)
-
-5
-
-You drink a flask and recover 10 HP.
-Kiro uses Kaio Ken! Attack boosted (+3). Hits for 7!
-You have 17 HP left.
-
---- Status ---
-Your HP: 17/43  |  Flasks: 1
-Kiro | HP: 18/30
-
-What will you do?
-1. Attack
-2. Skill  (Zoltraak)
-3. Ult    [already used]
-4. Dodge
-5. Use Flask (1 left)
-
-1
-
-You attack for 3 damage!
-Kiro attacks with determination for 4 damage!
-(Last Breath is passive — Kiro will survive one killing blow.)
-You have 13 HP left.
-
---- Status ---
-Your HP: 13/43  |  Flasks: 1
-Kiro | HP: 15/30
-
-What will you do?
-1. Attack
-2. Skill  (Zoltraak)
-3. Ult    [already used]
-4. Dodge
-5. Use Flask (1 left)
-
-2
-
-You use Zoltraak!
-
-Zoltraak! 3 damage!
-Kiro attacks you for 7 damage!
-You have 6 HP left.
-
---- Status ---
-Your HP: 6/43  |  Flasks: 1
-Kiro | HP: 12/30
-
-What will you do?
-1. Attack
-2. Skill  (Zoltraak)
-3. Ult    [already used]
-4. Dodge
-5. Use Flask (1 left)
-
-5
-
-You drink a flask and recover 10 HP.
-Kiro attacks you for 7 damage!
-You have 9 HP left.
-
---- Status ---
-Your HP: 9/43  |  Flasks: 0
-Kiro | HP: 12/30
-
-What will you do?
-1. Attack
-2. Skill  (Zoltraak)
-3. Ult    [already used]
-4. Dodge
-5. Use Flask (0 left)
-
-2
-
-You use Zoltraak!
-
-Zoltraak! 3 damage!
-Kiro uses Kaio Ken! Attack boosted (+4). Hits for 8!
-You have 1 HP left.
-
---- Status ---
-Your HP: 1/43  |  Flasks: 0
-Kiro | HP: 9/30
-
-What will you do?
-1. Attack
-2. Skill  (Zoltraak)
-3. Ult    [already used]
-4. Dodge
-5. Use Flask (0 left)
-
-2
-
-You use Zoltraak!
-
-Zoltraak! 3 damage!
-Kiro attacks you for 8 damage!
 You have 0 HP left.
 
 You were defeated...
@@ -1608,27 +359,5 @@ You were defeated...
 =================================
   YOU DIED.
 =================================
-> 2
-I don't know what you mean...
-> go west
-There is no door!
-> go south
-Endurance Path:
-You are Every step feels heavier than the last.
-Exits: east north 
-
-> go north
-Determination Room:
-You are Kiro-Representation of Determination
-Exits: south 
-
-=================================
-  Kiro appears!
-=================================
-
-You were defeated...
-
-=================================
-  YOU DIED.
-=================================
-> 
+I hope you weren't too bored here on the Soul game
+Thank you for playing. Good bye.

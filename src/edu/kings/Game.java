@@ -6,6 +6,7 @@ public class Game {
 	private World world;
 	private Player player; 
 	private Room previousRoom;
+private boolean gameOver;
 	
 	private boolean liebeDefeated;
 	private boolean alanDefeated;
@@ -28,6 +29,7 @@ public class Game {
 		this.alanDefeated = false;
 		this.kiroDefeated = false;
 		this.identityDefeated = false;
+		this.gameOver = false;
 		
 		
 		WeaponTest test = new WeaponTest();
@@ -47,7 +49,7 @@ public class Game {
 		printWelcome();
 
 		boolean wantToQuit = false;
-		while (!wantToQuit) {
+		while (!wantToQuit && !gameOver) {
 			Command command = Reader.getCommand();
 			wantToQuit = processCommand(command);
 		}
@@ -94,7 +96,7 @@ public class Game {
                 examineItem(command);
                 break;
             case talk:
-            	talk();
+            	talk(command);
             	break;
             case inventory: 
                 showInventory();
@@ -136,7 +138,8 @@ public class Game {
         
         }
 	
-	private void talk() {
+	
+	private void talk(Command comand) {
 	    Room currentRoom = player.getCurrentLocation();
 	    if (currentRoom.getName().equals("Soul Society")) {
 	        Writer.println("Andy: Hey, you made it out of the Hole.");
@@ -145,7 +148,10 @@ public class Game {
 	        Writer.println("Andy: Each one represents something you've lost.");
 	        Writer.println("Andy: Defeat them all and face what's waiting at the end.");
 	        Writer.println("Andy: The statues will restore you. Use them wisely.");
+	        Writer.println("Andy: This game is have a lot bugs because the creator spent mor time doing the combat system more than anything else");
+	        Writer.println("Andy: all bosses are unlock, just find them, the final boss is all to east and them all to south, so dont go there exist 4 bosses more so try to find them");
 	        Writer.println("Andy: Good luck. You'll need it.");
+	        
 	    } else {
 	        Writer.println("There's no one to talk to here.");
 	    }
@@ -295,6 +301,7 @@ public class Game {
 	    Writer.println("=================================");
 	    Writer.println("  YOU DIED.");
 	    Writer.println("=================================");
+	    gameOver=true;
 	    return;
 	}
 
@@ -336,6 +343,7 @@ public class Game {
 	                    return;
 	                } else {
 	                    player.gainMaxHp(1);
+	                    Writer.println("You defeatd"+ enemy.getName());
 	                }
 	            }
 	        }
@@ -351,10 +359,10 @@ public class Game {
 	        else {
 	            Item liebeKey = new Item("Liebe's Key", "A key stained with tears.", 1, 0);
 	            player.addItem(liebeKey);
-	            Writer.println("You obtained Liebe's Key!");
+	            Writer.println("!");
 	            player.gainMaxHp(3);
 	        }
-	    } else if (roomName.equals("Freedom Room")) {
+	    } else if (roomName.equals("freedom Room")) {
 	        Boss alan = new Boss("Alan", 25, 4);
 	        Combat combat = new Combat(player, alan);
 	        boolean won = combat.start();
@@ -362,7 +370,7 @@ public class Game {
 	        else {
 	            Item alanKey = new Item("Alan's Key", "A key that feels weightless.", 1, 0);
 	            player.addItem(alanKey);
-	            Writer.println("You obtained Alan's Key!");
+	            Writer.println("");
 	            player.gainMaxHp(3);
 	        }
 	    } else if (roomName.equals("Determination Room")) {
@@ -373,7 +381,7 @@ public class Game {
 	        else {
 	            Item kiroKey = new Item("Kiro's Key", "A key burning with willpower.", 1, 0);
 	            player.addItem(kiroKey);
-	            Writer.println("You obtained Kiro's Key!");
+	            Writer.println("");
 	            player.gainMaxHp(3);
 	        }
 	    } else if (roomName.equals("Identity Room")) {
