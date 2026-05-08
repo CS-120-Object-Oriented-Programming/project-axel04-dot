@@ -1,196 +1,534 @@
 package edu.kings;
-/**
- * This class is the main class of the "Campus of Kings" application.
- * "Campus of Kings" is a very simple, text based adventure game. Users can walk
- * around some scenery. That's all. It should really be extended to make it more
- * interesting!
- *
- * This game class creates and initializes all the others: it creates all rooms,
- * creates the parser and starts the game. It also evaluates and executes the
- * commands that the parser returns.
- *
- * @author Maria Jump
- * @version 2015.02.01
- *
- * Used with permission from Dr. Maria Jump at Northeastern University
- */
+
 
 public class Game {
-	/** The world where the game takes place. */
+	
 	private World world;
-	/** The room the player character is currently in. */
-	private Room currentRoom;
-
-	/**
-	 * Create the game and initialize its internal map.
-	 */
+	private Player player; 
+	private Room previousRoom;
+private boolean gameOver;
+	
+	private boolean liebeDefeated;
+	private boolean alanDefeated;
+	private boolean kiroDefeated;
+	private boolean identityDefeated;
+	
+	private int score;
+	private int turns;
+	
+	
+	
 	public Game() {
 		world = new World();
-		// set the starting room
-		currentRoom = world.getRoom("outside");
+		
+		player = new Player(world.getRoom("Hole"));
+		previousRoom = null;
+		score = 0;
+		turns = 0;
+		this.liebeDefeated = false;
+		this.alanDefeated = false;
+		this.kiroDefeated = false;
+		this.identityDefeated = false;
+		this.gameOver = false;
+		
+		
+		WeaponTest test = new WeaponTest();
+	    Weapon weapon = test.run();
+	    player.setWeapon(weapon);
+	    Writer.println("your soul partner is  " + weapon.getIcon() + " " + weapon.getName());
+	    Writer.println(weapon.getDescription());
+	    Writer.println();
+	    
+	  
 	}
+	
+	
 
-	/**
-	 * Main play routine. Loops until end of play.
-	 */
+	
 	public void play() {
 		printWelcome();
 
-		// Enter the main game loop. Here we repeatedly read commands and
-		// execute them until the game is over.
 		boolean wantToQuit = false;
-		while (!wantToQuit) {
+		while (!wantToQuit && !gameOver) {
 			Command command = Reader.getCommand();
 			wantToQuit = processCommand(command);
-			// other stuff that needs to happen every turn can be added here.
 		}
 		printGoodbye();
 	}
 
-	///////////////////////////////////////////////////////////////////////////
-	// Helper methods for processing the commands
+	
 
-	/**
-	 * Given a command, process (that is: execute) the command.
-	 *
-	 * @param command
-	 *            The command to be processed.
-	 * @return true If the command ends the game, false otherwise.
-	 */
 	private boolean processCommand(Command command) {
 		boolean wantToQuit = false;
 
 		if (command.isUnknown()) {
 			Writer.println("I don't know what you mean...");
-		} else {
+			return wantToQuit;
+		
+		}
+		
+		
 
-			String commandWord = command.getCommandWord();
-			if (commandWord.equals("help")) {
-				printHelp();
-			} else if (commandWord.equals("go")) {
-				goRoom(command);
-			} else if (commandWord.equals("quit")) {
-				wantToQuit = quit(command);
+		CommandEnum commandWord = command.getCommandEnum();
+		switch (commandWord) {
+            case help:
+                printHelp();
+                break;
+            case go:
+                goRoom(command);
+                break;
+            case look:
+                look();
+                break;
+            case status:
+                status();
+                break;
+            case back:
+                back();
+                break;
+            case take: 
+                takeItem(command);
+                break;
+            case drop: 
+                dropItem(command);
+                break;
+            case examine: 
+                examineItem(command);
+                break;
+            case talk:
+            	talk(command);
+            	break;
+            case inventory: 
+                showInventory();
+                break;
+            case unpack:
+                if (command.hasSecondWord()) {
+                    unpack(command.getWord(0));
+                } else {
+                    unpack(null);
+                }
+                break;
+            case pack:
+            	 if (command.hasSecondWord()) {
+                     pack(command.getWord(0));
+                 } else {
+                     pack(null);
+                 }
+            	 break;
+            case unlock:
+            	 if (command.hasSecondWord()) {
+                     unlock(command.getWord(0));
+                 } else {
+                     unlock(null);
+                 }
+            	 break;
+            case lock:
+            	 if (command.hasSecondWord()) {
+                     lock(command.getWord(0));
+                 } else {
+                     lock(null);
+                 }
+            	 break;
+            case quit:
+                wantToQuit = quit(command);
+                break;
+           
+        }
+        return wantToQuit;
+        
+        }
+	
+	
+	private void talk(Command comand) {
+	    Room currentRoom = player.getCurrentLocation();
+	    if (currentRoom.getName().equals("Soul Society")) {
+	        Writer.println("Andy: Hey, you made it out of the Hole.");
+	        Writer.println("Andy: This place is called Soul Society. It's the last safe city.");
+	        Writer.println("Andy: Out there are 4 bosses");
+	        Writer.println("Andy: Each one represents something you've lost.");
+	        Writer.println("Andy: Defeat them all and face what's waiting at the end.");
+	        Writer.println("Andy: The statues will restore you. Use them wisely.");
+	        Writer.println("Andy: This game is have a lot bugs because the creator spent mor time doing the combat system more than anything else");
+	        Writer.println("Andy: all bosses are unlock, just find them, the final boss is all to east and them all to south, so dont go there exist 4 bosses more so try to find them");
+	        Writer.println("Andy: Good luck. You'll need it.");
+	        
+	    } else {
+	        Writer.println("There's no one to talk to here.");
+	    }
+	}
+        private void unpack(String itemName) {
+            if (itemName == null) {
+                Writer.println("Unpack what?");
+                return;
+            }
+
+            Writer.println("From what?");
+            String containerName = Reader.getResponse();
+
+            Room currentRoom = player.getCurrentLocation();
+            Item item = currentRoom.getItem(containerName);
+
+            if (item instanceof Container) {
+                Container container = (Container) item;
+
+                Item removed = container.removeItem(itemName);
+
+                if (removed != null) {
+                    player.addItem(removed);
+                    Writer.println("You unpacked the " + itemName + ".");
+                } else {
+                    Writer.println("That item is not in the container.");
+                }
+            } else {
+                Writer.println("That is not a container.");
+            }
+        }
+        
+        private void pack(String itemName) {
+            if (itemName == null) {
+                Writer.println("Pack what?");
+                return;
+            }
+
+            Writer.println("In what?");
+            String containerName = Reader.getResponse();
+
+            Room currentRoom = player.getCurrentLocation();
+            Item item = currentRoom.getItem(containerName);
+
+            if (item instanceof Container) {
+                Container container = (Container) item;
+
+                Item playerItem = player.removeItem(itemName);
+
+                if (playerItem != null) {
+                    container.addItem(playerItem);
+                    Writer.println("You packed the " + itemName + ".");
+                } else {
+                    Writer.println("You don't have that item.");
+                }
+
+            } else {
+                Writer.println("That is not a container.");
+            }
+        }
+	
+	private void takeItem(Command command) {
+		if (!command.hasSecondWord()) {
+			Writer.println("Take what?");
+			return;
+		}
+		String itemName = command.getWord(0);
+		Room currentRoom = player.getCurrentLocation();
+		Item item = currentRoom.getItem(itemName);
+
+		if (item == null) {
+			Writer.println("That item is not here.");
+		} else {
+			if (player.addItem(item)) {
+				currentRoom.removeItem(itemName);
+				Writer.println("You took the " + itemName + ".");
 			} else {
-				Writer.println(commandWord + " is not implemented yet!");
+				Writer.println("The " + itemName + " is too heavy to carry.");
 			}
 		}
-		return wantToQuit;
+	}
+
+	
+	private void dropItem(Command command) {
+		if (!command.hasSecondWord()) {
+			Writer.println("Drop what?");
+			return;
+		}
+		String itemName = command.getWord(0);
+		Item item = player.removeItem(itemName);
+
+		if (item == null) {
+			Writer.println("You are not carrying that.");
+		} else {
+			player.getCurrentLocation().addItem(item);
+			Writer.println("You dropped the " + itemName + ".");
+		}
+	}
+
+	
+	private void examineItem(Command command) {
+	    if (!command.hasSecondWord()) {
+	        Writer.println("Examine what?");
+	        return;
+	    }
+	    String itemName = command.getWord(0);
+	    Item item = player.getCurrentLocation().getItem(itemName);
+	    if (item == null) {
+	        item = player.getItem(itemName);
+	    }
+
+	    if (item == null) {
+	        Writer.println("You don't see that here.");
+	        return;
+	    }
+
+	    if (item.getName().equalsIgnoreCase("Statue")) {
+	        player.heal(player.getMaxHp());
+	        player.refillFlasks();
+	        Writer.println("The statue glows... HP restored and flasks refilled.");
+	        if (liebeDefeated || alanDefeated || kiroDefeated || identityDefeated) {
+	            Writer.println("The statue also offers a power upgrade.");
+	            Writer.println("Do you want to increase your damage? (yes/no)");
+	            String answer = Reader.getResponse();
+	            if (answer.equals("yes")) {
+	                player.setBaseDamage(player.getBaseDamage() + 0.5);
+	                Writer.println("Your damage increased to " + player.getBaseDamage() + "!");
+	            }
+	        }
+	        return;
+	    }
+
+	    Writer.println(item.toString());
+	}
+	
+	private void showInventory() {
+		Writer.println(player.getInventoryString());
 	}
 
 	///////////////////////////////////////////////////////////////////////////
-	// Helper methods for implementing all of the commands.
-	// It helps if you organize these in alphabetical order.
 
-	/**
-	 * Try to go to one direction. If there is an exit, enter the new room,
-	 * otherwise print an error message.
-	 *
-	 * @param command
-	 *            The command to be processed.
-	 */
+	private void printLocationInformation() {
+		Writer.println(player.getCurrentLocation().toString());
+	}
+	
+	private void printGameOver() {
+	    Writer.println("=================================");
+	    Writer.println("  YOU DIED.");
+	    Writer.println("=================================");
+	    gameOver=true;
+	    return;
+	}
+
 	private void goRoom(Command command) {
-		if (!command.hasSecondWord()) {
-			// if there is no second word, we don't know where to go...
-			Writer.println("Go where?");
-		} else {
-			String direction = command.getRestOfLine();
+	    if (!command.hasSecondWord()) {
+	        Writer.println("Go where?");
+	        return;
+	    }
 
-			// Try to leave current.
-			Door doorway = null;
-			if (direction.equals("north")) {
-				doorway = currentRoom.northExit;
-			}
-			if (direction.equals("east")) {
-				doorway = currentRoom.eastExit;
-			}
-			if (direction.equals("south")) {
-				doorway = currentRoom.southExit;
-			}
-			if (direction.equals("west")) {
-				doorway = currentRoom.westExit;
-			}
+	    String direction = command.getRestOfLine();
+	    Door doorway = player.getCurrentLocation().getExit(direction);
 
-			if (doorway == null) {
-				Writer.println("There is no door!");
-			} else {
-				Room newRoom = doorway.getDestination();
-				currentRoom = newRoom;
-				Writer.println(newRoom.getName() + ":");
-				Writer.println("You are " + newRoom.getDescription());
-				Writer.print("Exits: ");
-				if (newRoom.northExit != null) {
-					Writer.print("north ");
-				}
-				if (newRoom.eastExit != null) {
-					Writer.print("east ");
-				}
-				if (newRoom.southExit != null) {
-					Writer.print("south ");
-				}
-				if (newRoom.westExit != null) {
-					Writer.print("west ");
-				}
-				Writer.println();
-			}
-		}
+	    if (doorway == null) {
+	        Writer.println("There is no door!");
+	        return;
+	    }
+
+	    if (doorway.isLocked()) {
+	        Writer.println("The door is locked.");
+	        return;
+	    }
+
+	    previousRoom = player.getCurrentLocation();
+	    player.setCurrentLocation(doorway.getDestination());
+	    turns++;
+	    printLocationInformation();
+
+	    Room currentRoom = player.getCurrentLocation();
+
+	  
+	    if (currentRoom.hasEnemies()) {
+	        for (Enemy enemy : currentRoom.getEnemies()) {
+	            if (enemy.isAlive()) {
+	                Writer.println("An enemy appears!");
+	                Combat combat = new Combat(player, enemy);
+	                boolean won = combat.start();
+	                if (!won) {
+	                    printGameOver();
+	                    return;
+	                } else {
+	                    player.gainMaxHp(1);
+	                    Writer.println("You defeatd"+ enemy.getName());
+	                }
+	            }
+	        }
+	    }
+
+	   
+	    String roomName = currentRoom.getName();
+	    if (roomName.equals("Love Room")) {
+	        Boss liebe = new Boss("Liebe", 20, 3);
+	        Combat combat = new Combat(player, liebe);
+	        boolean won = combat.start();
+	        if (!won) { printGameOver(); return; }
+	        else {
+	            Item liebeKey = new Item("Liebe's Key", "A key stained with tears.", 1, 0);
+	            player.addItem(liebeKey);
+	            Writer.println("!");
+	            player.gainMaxHp(3);
+	        }
+	    } else if (roomName.equals("freedom Room")) {
+	        Boss alan = new Boss("Alan", 25, 4);
+	        Combat combat = new Combat(player, alan);
+	        boolean won = combat.start();
+	        if (!won) { printGameOver(); return; }
+	        else {
+	            Item alanKey = new Item("Alan's Key", "A key that feels weightless.", 1, 0);
+	            player.addItem(alanKey);
+	            Writer.println("");
+	            player.gainMaxHp(3);
+	        }
+	    } else if (roomName.equals("Determination Room")) {
+	        Boss kiro = new Boss("Kiro", 30, 4);
+	        Combat combat = new Combat(player, kiro);
+	        boolean won = combat.start();
+	        if (!won) { printGameOver(); return; }
+	        else {
+	            Item kiroKey = new Item("Kiro's Key", "A key burning with willpower.", 1, 0);
+	            player.addItem(kiroKey);
+	            Writer.println("");
+	            player.gainMaxHp(3);
+	        }
+	    } else if (roomName.equals("Identity Room")) {
+	        Boss identity = new Boss("Identity", 38, 5);
+	        Combat combat = new Combat(player, identity);
+	        boolean won = combat.start();
+	        if (!won) { printGameOver(); return; }
+	        else {
+	            Item identityKey = new Item("Identity's Key", "A key that reflects yourself.", 1, 0);
+	            player.addItem(identityKey);
+	            Writer.println("You obtained Identity's Key!");
+	            player.gainMaxHp(3);
+	        }
+	    } else if (roomName.equals("Reflection")) {
+	        Boss you = new Boss("you", (int)(player.getMaxHp() * 1.5),
+	                            (int)(player.getBaseDamage() * 1.3), player.getWeapon());
+	        Combat combat = new Combat(player, you);
+	        boolean won = combat.start();
+	        if (!won) { printGameOver(); return; }
+	        else {
+	            Writer.println("=================================");
+	            Writer.println("  YOU WON...");
+	            Writer.println("At the end, you have love, you have Freedom, you have Determination,you have Identity,at the end you are just you");
+	            Writer.println("=================================");
+	        }
+	    }
 	}
 
-	/**
-	 * Print out the closing message for the player.
-	 */
-	private void printGoodbye() {
-		Writer.println("I hope you weren't too bored here on the Campus of Kings!");
-		Writer.println("Thank you for playing.  Good bye.");
+	
+	private void unlock(String direction) {
+	    if (direction == null) {
+	        Writer.println("Unlock what?");
+	        return;
+	    }
+
+	    Door door = player.getCurrentLocation().getExit(direction);
+
+	    if (door == null) {
+	        Writer.println("There is no door.");
+	        return;
+	    }
+
+	    Writer.println("With what?");
+	    String keyName = Reader.getResponse();
+
+	    Item key = player.getItem(keyName);
+
+	    if (key == null) {
+	        Writer.println("You don't have that key.");
+	        return;
+	    }
+
+	    if (door.getKey().getName().equalsIgnoreCase(key.getName())) {
+	        door.setLocked(false);
+	        Writer.println("The door is now unlocked.");
+	    } else {
+	        Writer.println("That key doesn't work.");
+	    }
+	}
+	
+	private void lock(String direction) {
+	    if (direction == null) {
+	        Writer.println("Lock what?");
+	        return;
+	    }
+
+	    Door door = player.getCurrentLocation().getExit(direction);
+
+	    if (door == null) {
+	        Writer.println("There is no door.");
+	        return;
+	    }
+
+	    Writer.println("With what?");
+	    String keyName = Reader.getResponse();
+
+	    Item key = player.getItem(keyName);
+
+	    if (key == null) {
+	        Writer.println("You don't have that key.");
+	        return;
+	    }
+
+	    if (door.getKey().equals(key)) {
+	        door.setLocked(true);
+	        Writer.println("The door is now locked.");
+	    } else {
+	        Writer.println("That key doesn't work.");
+	    }
+	}
+	private void look() {
+		printLocationInformation();
 	}
 
-	/**
-	 * Print out some help information. Here we print some stupid, cryptic
-	 * message and a list of the command words.
-	 */
+	private void status() {
+		Writer.println("--- Status ---");
+		Writer.println("Score: " + score);
+		Writer.println("Turns: " + turns);
+		Writer.println();
+		printLocationInformation();
+	}
+
+	
+
+
+	
+	private void back() {
+	    if (previousRoom == null) {
+	        Writer.println("You have nowhere to go back to!");
+	    } else {
+	        Room temp = player.getCurrentLocation();
+	        player.setCurrentLocation(previousRoom);
+	        previousRoom = temp;
+	        turns++;
+	        Writer.println("You went back.");
+	        printLocationInformation();
+	    }
+	}
+
+	
 	private void printHelp() {
-		Writer.println("You are lost. You are alone. You wander");
-		Writer.println("around at the university.");
+		Writer.println("You are lost. You are not alone.");
+		Writer.println("around at the Souls World.");
 		Writer.println();
 		Writer.println("Your command words are:");
-		Writer.println("   go quit help");
+		Writer.println(" go, quit, help, back, status, talk,Examine");
+		Writer.println();
+		printLocationInformation();
 	}
 
-	/**
-	 * Print out the opening message for the player.
-	 */
+
 	private void printWelcome() {
 		Writer.println();
-		Writer.println("Welcome to the Campus of Kings!");
-		Writer.println("Campus of Kings is a new, incredibly boring adventure game.");
+		Writer.println("Welcome to Souls");
+		Writer.println("Souls is a new, incredibly boring adventure game.");
 		Writer.println("Type 'help' if you need help.");
 		Writer.println();
-		Writer.println(currentRoom.getName() + ":");
-		Writer.println("You are " + currentRoom.getDescription());
-		Writer.print("Exits: ");
-		if (currentRoom.northExit != null) {
-			Writer.print("north ");
-		}
-		if (currentRoom.eastExit != null) {
-			Writer.print("east ");
-		}
-		if (currentRoom.southExit != null) {
-			Writer.print("south ");
-		}
-		if (currentRoom.westExit != null) {
-			Writer.print("west ");
-		}
-		Writer.println("");
+		printLocationInformation();
 	}
 
-	/**
-	 * "Quit" was entered. Check the rest of the command to see whether we
-	 * really quit the game.
-	 *
-	 * @param command
-	 *            The command to be processed.
-	 * @return true, if this command quits the game, false otherwise.
-	 */
+	
+	private void printGoodbye() {
+		Writer.println("I hope you weren't too bored here on the Soul game");
+		Writer.println("Thank you for playing. Good bye.");
+	}
+
+	
 	private boolean quit(Command command) {
 		boolean wantToQuit = true;
 		if (command.hasSecondWord()) {

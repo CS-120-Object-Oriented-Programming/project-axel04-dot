@@ -1,0 +1,363 @@
+=================================
+  Soul Partner.
+  answer with yes or no.
+=================================
+
+Question 1 about 15:
+Do you rely more on luck than a plan?
+on
+answer yes or not ._. .
+no
+
+Question 2 about 15:
+Do you prefer to solve problems creatively?
+no
+
+Question 3 about 15:
+Are you willing to sacrifice yourself for total victory?
+no
+
+Question 4 about 15:
+Are you stronger when you have someone by your side?
+no
+
+Question 5 about 15:
+Do you prefer to attack from afar and control the situation?
+no
+
+Question 6 about 15:
+Do you act quickly?
+no
+
+Question 7 about 15:
+When you're in trouble, do you become more dangerous?
+no
+
+Question 8 about 15:
+Do you trust yourself more than any tool?
+no
+
+Question 9 about 15:
+Do you read situations well before acting?
+no
+
+Question 10 about 15:
+Do you consider yourself a person of spiritual or mental power?
+no
+
+Question 11 about 15:
+Do you accept the end of things without fear?
+no
+
+Question 12 about 15:
+Do you see yourself as someone who protects others?
+no
+
+Question 13 about 15:
+Do you do what works without complicating things?
+no
+
+Question 14 about 15:
+Do you give your all even if it leaves you with nothing?
+no
+
+Question 15 about 15:
+Do you prefer the unexpected over the predictable?
+no
+
+¡Mmm here is a tie, well, let you pick, which you wanna ?
+1. 🎲 A coin
+2. ✏️ A pencil
+3. 🗡️ A GreatSword
+4. 💍 A ring
+5. 🏹 A bow
+6. 🔪 A Daggers
+7. 🌿 A Machete
+8. 👊 Hand to Hand
+9. ⚔️ A Katana
+10. 🪄 Magic
+11. ⚖️ A Scythe
+12. 🗡️ A Sword
+13. 🔫 A Gun
+14. 🔋 Energy
+15. 🍃 Green
+no
+write the number of your election 
+3
+your soul partner is  🗡️ A GreatSword
+AAAAAAAAHHHHH !!!!
+
+
+Welcome to Souls
+Souls is a new, incredibly boring adventure game.
+Type 'help' if you need help.
+
+Hole:
+You are in one Hole.
+Exits: east north west 
+Items: backpack 
+
+> go north
+Open Horizon:
+You are The endless sky symbolizes freedom.
+Exits: south north 
+
+An enemy appears!
+=================================
+  Wind Shade appears!
+=================================
+
+--- Status ---
+Your HP: 5/5  |  Flasks: 3
+Wind Shade | HP: 5/5
+
+What will you do?
+1. Attack
+2. Skill  (Lion Claw)
+3. Ult    (Berserker)
+4. Dodge
+5. Use Flask (3 left)
+
+2
+
+You use Lion Claw!
+
+Spinning Slash! 5 damage!
+You defeated Wind Shade!
+
+You defeatdWind Shade
+> go north
+Wind Passage:
+You are Strong winds push against you.
+Exits: east south west 
+
+An enemy appears!
+=================================
+  Storm Spirit appears!
+=================================
+
+--- Status ---
+Your HP: 6/6  |  Flasks: 3
+Storm Spirit | HP: 5/5
+
+What will you do?
+1. Attack
+2. Skill  (Lion Claw)
+3. Ult    (Berserker)
+4. Dodge
+5. Use Flask (3 left)
+
+2
+
+You use Lion Claw!
+
+Spinning Slash! 5 damage!
+You defeated Storm Spirit!
+
+You defeatdStorm Spirit
+> 1
+I don't know what you mean...
+> go west
+Willpower Arena:
+You are Only those with strong determination survive.
+Exits: east west 
+
+An enemy appears!
+=================================
+  Weak Will appears!
+=================================
+
+--- Status ---
+Your HP: 7/7  |  Flasks: 3
+Weak Will | HP: 7/7
+
+What will you do?
+1. Attack
+2. Skill  (Lion Claw)
+3. Ult    (Berserker)
+4. Dodge
+5. Use Flask (3 left)
+
+2
+
+You use Lion Claw!
+
+Spinning Slash! 5 damage!
+Weak Will attacks for 3 damage!
+You have 4 HP left.
+
+--- Status ---
+Your HP: 4/7  |  Flasks: 3
+Weak Will | HP: 2/7
+
+What will you do?
+1. Attack
+2. Skill  (Lion Claw)
+3. Ult    (Berserker)
+4. Dodge
+5. Use Flask (3 left)
+
+1
+
+You attack for 3 damage!
+You defeated Weak Will!
+
+You defeatdWeak Will
+An enemy appears!
+=================================
+  Doubt Shade appears!
+=================================
+
+--- Status ---
+Your HP: 5/8  |  Flasks: 3
+Doubt Shade | HP: 5/5
+
+What will you do?
+1. Attack
+2. Skill  (Lion Claw)
+3. Ult    (Berserker)
+4. Dodge
+5. Use Flask (3 left)
+
+1
+
+You attack for 3 damage!
+Doubt Shade attacks for 2 damage!
+You have 3 HP left.
+
+--- Status ---
+Your HP: 3/8  |  Flasks: 3
+Doubt Shade | HP: 2/5
+
+What will you do?
+1. Attack
+2. Skill  (Lion Claw)
+3. Ult    (Berserker)
+4. Dodge
+5. Use Flask (3 left)
+
+2
+
+You use Lion Claw!
+
+Spinning Slash! 5 damage!
+You defeated Doubt Shade!
+
+You defeatdDoubt Shade
+> go west
+Endurance Path:
+You are Every step feels heavier than the last.
+Exits: east north 
+
+An enemy appears!
+=================================
+  Exhausted Soul appears!
+=================================
+
+--- Status ---
+Your HP: 4/9  |  Flasks: 3
+Exhausted Soul | HP: 6/6
+
+What will you do?
+1. Attack
+2. Skill  (Lion Claw)
+3. Ult    (Berserker)
+4. Dodge
+5. Use Flask (3 left)
+
+5
+
+You drink a flask and recover 2 HP.
+Exhausted Soul attacks for 2 damage!
+You have 4 HP left.
+
+--- Status ---
+Your HP: 4/9  |  Flasks: 2
+Exhausted Soul | HP: 6/6
+
+What will you do?
+1. Attack
+2. Skill  (Lion Claw)
+3. Ult    (Berserker)
+4. Dodge
+5. Use Flask (2 left)
+
+2
+
+You use Lion Claw!
+
+Spinning Slash! 5 damage!
+Exhausted Soul attacks for 2 damage!
+You have 2 HP left.
+
+--- Status ---
+Your HP: 2/9  |  Flasks: 2
+Exhausted Soul | HP: 1/6
+
+What will you do?
+1. Attack
+2. Skill  (Lion Claw)
+3. Ult    (Berserker)
+4. Dodge
+5. Use Flask (2 left)
+
+5
+
+You drink a flask and recover 2 HP.
+Exhausted Soul attacks for 2 damage!
+You have 2 HP left.
+
+--- Status ---
+Your HP: 2/9  |  Flasks: 1
+Exhausted Soul | HP: 1/6
+
+What will you do?
+1. Attack
+2. Skill  (Lion Claw)
+3. Ult    (Berserker)
+4. Dodge
+5. Use Flask (1 left)
+
+2
+
+You use Lion Claw!
+
+Spinning Slash! 5 damage!
+You defeated Exhausted Soul!
+
+You defeatdExhausted Soul
+> go west
+There is no door!
+> go north
+Determination Room:
+You are Kiro-Representation of Determination
+Exits: south 
+
+=================================
+  Kiro appears!
+=================================
+
+--- Status ---
+Your HP: 3/10  |  Flasks: 1
+Kiro | HP: 30/30
+
+What will you do?
+1. Attack
+2. Skill  (Lion Claw)
+3. Ult    (Berserker)
+4. Dodge
+5. Use Flask (1 left)
+
+5
+
+You drink a flask and recover 2 HP.
+Kiro uses Kaio Ken! Attack boosted (+1). Hits for 5!
+You have 0 HP left.
+
+You were defeated...
+
+=================================
+  YOU DIED.
+=================================
+I hope you weren't too bored here on the Soul game
+Thank you for playing. Good bye.

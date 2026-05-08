@@ -26,7 +26,7 @@ import java.util.ArrayList;
 
 public class Command {
 	/** The command word for this command. */
-	private String commandWord;
+	private CommandEnum commandWord;
 	/** The rest of the line with all the spaces removed. */
 	private ArrayList<String> restOfLine;
 
@@ -38,8 +38,8 @@ public class Command {
 	 *            The first word of the command. Null if the command was not
 	 *            recognized.
 	 */
-	public Command(String firstWord) {
-		commandWord = firstWord;
+	public Command(CommandEnum firstWord) {
+		this.commandWord = firstWord;
 		restOfLine = new ArrayList<String>();
 	}
 
@@ -53,8 +53,8 @@ public class Command {
 	 * @param rest
 	 *            The rest of the command.
 	 */
-	public Command(String firstWord, ArrayList<String> rest) {
-		commandWord = firstWord;
+	public Command(CommandEnum firstWord, ArrayList<String> rest) {
+		this.commandWord = firstWord;
 		restOfLine = rest;
 	}
 
@@ -64,7 +64,8 @@ public class Command {
 	 *
 	 * @return The command word.
 	 */
-	public String getCommandWord() {
+	public CommandEnum getCommandEnum() {
+		
 		return commandWord;
 	}
 
@@ -81,8 +82,9 @@ public class Command {
 	 * Returns if this command has a second word.
 	 *
 	 * @return true if the command has a second word.
-	 */
+	**/
 	public boolean hasSecondWord() {
+	
 		return restOfLine != null;
 	}
 

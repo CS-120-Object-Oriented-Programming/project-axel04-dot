@@ -109,6 +109,7 @@ public class Main extends JFrame implements ActionListener {
 		setVisible(true);
 		commandField.requestFocus();
 
+		
 		game = new Game();
 		game.play();
 	}
@@ -221,7 +222,7 @@ public class Main extends JFrame implements ActionListener {
 			if (result == 0xDEADBEEF) {
 				// no input available, block until more is available because
 				// that's
-				// the behavior specified in the Javadocs.
+				
 				while (text == null || position >= text.length()) {
 					try {
 						// read() should block until new input is available.
