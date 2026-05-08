@@ -10,32 +10,91 @@ public class Player {
 
     private Room currentLocation;
     /** The player's inventory. */
-    private HashMap<String, Items> inventory;
+    private HashMap<String, Item> inventory;
     /** The player's maximum carry weight. */
     private static final int MAX_WEIGHT = 20; 
+    private int maxHp;
+    private int currentHp;
+    private double baseDamage;
+    private int flasks;
+    private int maxFlasks;
+    private Weapon weapon;
 
     public Player(Room startingRoom) {
         this.currentLocation = startingRoom;
-        this.inventory = new HashMap<String, Items>();
+        this.inventory = new HashMap<String, Item>();
+        this.maxHp = 20;
+        this.currentHp = 20;
+        this.baseDamage = 3;
+        this.flasks = 4;
+        this.maxFlasks = 4;
+        this.weapon = null;
     }
 
-    /**
-     * Add an item to the player's inventory. [cite: 48]
-     * This method returns whether or not the item was successfully added. [cite: 49]
-     * The player's inventory is limited by some maximum weight. [cite: 50]
-     * @param item The item to add.
-     * @return true if added, false if it's too heavy.
-     */
-    public boolean addItem(Items item) {
+    public int getCurrentHp() { return currentHp; }
+    public int getMaxHp() { return maxHp; }
+    public double getBaseDamage() { return baseDamage; }
+    public int getFlasks() { return flasks; }
+    public Weapon getWeapon() { return weapon; }
+
+    public void setWeapon(Weapon weapon) { this.weapon = weapon; }
+    public void setBaseDamage(double damage) { this.baseDamage = damage; }
+
+    public void takeDamage(int amount) {
+        currentHp -= amount;
+        if (currentHp < 0) currentHp = 0;
+    }
+
+    public void heal(int amount) {
+        currentHp += amount;
+        if (currentHp > maxHp) currentHp = maxHp;
+    }
+
+    public void gainMaxHp(int amount) {
+        maxHp += amount;
+        currentHp += amount;
+    }
+
+    public boolean useFlask() {
+        if (flasks > 0) {
+            flasks--;
+            heal((int)(maxHp * 0.25));
+            return true;
+        }
+        return false;
+    }
+
+    public void refillFlasks() {
+        flasks = maxFlasks;
+    }
+
+    public boolean isAlive() {
+        return currentHp > 0;
+    }
+   
+    
+    public String getInventoryString() {
+        if (inventory.isEmpty()) {
+            return "You are not carrying anything.";
+        }
+        String result = "You are carrying:";
+        for (Item item : inventory.values()) {
+            result += "\n - " + item.getName();
+        }
+        return result;
+    }
+    
+    
+    public boolean addItem(Item item) {
         boolean added = false;
         int currentWeight = 0;
 
-        // Calculate current weight of all items
-        for (Items i : inventory.values()) {
+       
+        for (Item i : inventory.values()) {
             currentWeight += i.getWeight();
         }
 
-        // Check if adding the new item exceeds MAX_WEIGHT [cite: 51]
+       
         if ((currentWeight + item.getWeight()) <= MAX_WEIGHT) {
             inventory.put(item.getName().toLowerCase(), item);
             added = true;
@@ -44,21 +103,14 @@ public class Player {
         return added;
     }
 
-    /**
-     * Get an item from the player's inventory by its name. [cite: 52]
-     * @param name The name of the item.
-     * @return The item or null if not found.
-     */
-    public Items getItem(String name) {
+   
+   
+    public Item getItem(String name) {
         return inventory.get(name.toLowerCase());
     }
 
-    /**
-     * Remove an item from the player's inventory. [cite: 53]
-     * @param name The name of the item to remove.
-     * @return The removed item or null.
-     */
-    public Items removeItem(String name) {
+   
+    public Item removeItem(String name) {
         return inventory.remove(name.toLowerCase());
     }
 
@@ -66,10 +118,7 @@ public class Player {
         return currentLocation;
     }
 
-    /**
-     * Changes the player's location to a new room.
-     * @param nextRoom The new room the player moves to.
-     */
+  
     public void setCurrentLocation(Room nextRoom) {
         this.currentLocation = nextRoom;
     }

@@ -1,7 +1,7 @@
 package edu.kings;
 
 import java.util.HashMap;
-
+import java.util.ArrayList;
 /**
  * Class Room - a room in an adventure game.
  *
@@ -15,6 +15,7 @@ import java.util.HashMap;
  *
  * Used with permission from Dr. Maria Jump at Northeastern University
  */
+
 public class Room {
     /** Counter for the total number of rooms created in the world. */
     private static int counter;
@@ -29,13 +30,18 @@ public class Room {
     /** The items in this room. */
     private HashMap<String, Item> items;
 
+    private ArrayList<Enemy> enemies; 
+    
     /**
      * Static initializer.
      */
     static {
         counter = 0;
     }
-
+    
+    	
+    
+  
     /**
      * Create a room described "description". Initially, it has no exits.
      * "description" is something like "a kitchen" or "an open court yard".
@@ -48,15 +54,34 @@ public class Room {
         this.description = description;
         this.exits = new HashMap<String, Door>();
         this.items = new HashMap<String, Item>(); 
+        this.enemies = new ArrayList<Enemy>();
         counter++;
     }
+    
+    
+    public void addEnemy(Enemy enemy) {
+        enemies.add(enemy);
+    }
+
+    public ArrayList<Enemy> getEnemies() {
+        return enemies;
+    }
+
+    public boolean hasEnemies() {
+        return !enemies.isEmpty();
+    }
+    
+    public String getName() {
+        return name;
+    }
+   
 
     /**
      * Add an item to this room. 
      * @param item The item to be added.
      */
     public void addItem(Item item) {
-        Item.put(item.getName().toLowerCase(), item); 
+        items.put (item.getName().toLowerCase(), item); 
     }
 
     /**
@@ -65,16 +90,18 @@ public class Room {
      * @return The item or null if not found.
      */
     public Item getItem(String name) {
-        return Item.get(name.toLowerCase()); 
+        return items.get(name.toLowerCase()); 
     }
 
+    
+    
     /**
      * Remove an item from the room by its name. 
      * @param name The name of the item to remove.
      * @return The actual item removed, or null if it doesn't exist. 
      */
     public Item removeItem(String name) {
-        return Item.remove(name.toLowerCase()); 
+        return items.remove(name.toLowerCase()); 
     }
 
     /**

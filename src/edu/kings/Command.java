@@ -82,8 +82,9 @@ public class Command {
 	 * Returns if this command has a second word.
 	 *
 	 * @return true if the command has a second word.
-	 */
+	**/
 	public boolean hasSecondWord() {
+	
 		return restOfLine != null;
 	}
 

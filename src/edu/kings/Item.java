@@ -7,6 +7,14 @@ public class Item {
 	private Integer weight;
 	private Integer value;
 	
+	
+	
+	public Item(String name, String description, Integer weight, Integer value) {
+	    this.name = name;
+	    this.description = description;
+	    this.weight = weight;
+	    this.value = value;
+	}
 	public String getName() {
 		return name;
 	}

@@ -28,11 +28,9 @@ public class Door {
 	 * @param destination The room this door leads to
 	 */
 	public Door(Room destination) {
-		Door door = new Door(toRoom);
-		door.setLocked(true);
-		door.setKey(key);
-		this.destination = destination;
-		this.locked = false;
+	    this.destination = destination;
+	    this.locked = false;
+	    this.key = null;
 	}
 
 	/**

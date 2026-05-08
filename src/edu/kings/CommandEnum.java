@@ -1,20 +1,21 @@
 package edu.kings;
 
 public enum CommandEnum {  
-	go (),
-	look (),
-	status (),
-	back (),
-	help (),
-	quit (),
-	take (),
-	drop(),
-	examine(),
-	inventory(),
+	go("go"),
+	look("look"),
+	status("status"),
+	back("back"),
+	help("help"),
+	quit("quit"),
+	take("take"),
+	drop("drop"),
+	examine("examine"),
+	inventory("inventory"),
 	unlock("unlock"), 
     lock("lock"), 
     pack("pack"), 
-    unpack("unpack");
+    unpack("unpack"),
+	talk("talk");
 
     private String commandString;
 
